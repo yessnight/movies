@@ -74,18 +74,919 @@
 
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-20">
         <!-- Movie Grid -->
-        <div id="movie-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 sm:gap-6 transition-all duration-500 opacity-100 scale-100">
-            <!-- Cards will be injected by JavaScript -->
-        </div>
-        
-        <!-- Empty State -->
-        <div id="empty-state" class="hidden text-center py-32 text-gray-400 flex flex-col items-center">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mb-4 opacity-50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z" />
-            </svg>
-            <p class="text-xl font-medium">Бұл санатта әзірге ештеңе жоқ.</p>
-            <p class="text-sm mt-2 opacity-70">Жаңа туынды қосу үшін жоғарыдағы батырманы басыңыз.</p>
-        </div>
+       <div id="movie-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 sm:gap-6 transition-all duration-500 opacity-100 scale-100"><div class="relative overflow-hidden rounded-xl aspect-[2/3] group shadow-lg border border-white/10 bg-gray-900">
+                            <img src="https://upload.wikimedia.org/wikipedia/ru/b/b3/%D0%94%D0%B2%D0%BE%D0%B9%D0%BD%D0%B0%D1%8F_%D0%BF%D0%BE%D1%80%D1%86%D0%B8%D1%8F_2004_Poster.jpg?utm_source=ru.wikipedia.org&amp;utm_campaign=index&amp;utm_content=original" alt="Двойная порция" onerror="this.src='https://placehold.co/400x600/222/FFF?text=Image+Not+Found'" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out">
+                            
+                            <!-- Hover Overlay -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-4 z-10">
+                                
+                                <div class="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300">
+                                    <h3 class="text-white font-bold text-lg leading-tight mb-1 truncate">Двойная порция</h3>
+                                    <span class="block text-orange-400 font-medium text-sm mb-4">2004</span>
+                                    
+                                    <div class="flex flex-col gap-2">
+                                        <a href="https://www.google.com/search?q=%D0%B4%D0%B2%D0%BE%D0%B9%D0%BD%D0%B0%D1%8F+%D0%BF%D0%BE%D1%80%D1%86%D0%B8%D1%8F+2004&amp;newwindow=1&amp;sca_esv=4c5de4241442eb86&amp;biw=1920&amp;bih=1065&amp;sxsrf=APpeQnuq-PlQoZux7nl6cIgvB331XL6vgw%3A1790257620684&amp;ei=1Cm1asyxKbKoxc8Pj_SKiQc&amp;oq=%D0%B4%D0%B2%D0%BE%D0%B9%D0%BD%D0%B0%D1%8F+%D0%BF%D0%BE%D1%80%D1%86%D0%B8%D1%8F&amp;gs_lp=Egxnd3Mtd2l6LXNlcnAiG9C00LLQvtC50L3QsNGPINC_0L7RgNGG0LjRjyoGCAUYFhgeMgUQLhiABDIGEAAYFhgeMgYQABgWGB4yBhAAGBYYHjIGEAAYFhgeMgYQABgWGB4yBhAAGBYYHjIGEAAYFhgeMgYQABgWGB4yBhAAGBYYHjIUEC4YgAQYlwUY3AQY3gQY4ATYAQFIsFVQww1Y1UNwAXgBkAEAmAHIAaABuxOqAQYwLjEzLjGwAQC4AQHIAQD4AQGYAg-gAvQUqAIQwgIHECMY6gIYJ8ICDRAjGMkCGPAFGOoCGCfCAgcQLhjqAhgnwgIXEAAYgAQYigUYkQIY5wYY6gIYtALYAQHCAhoQABiABBiKBRiRAhjnBhi0BxjqAhi0AtgBAcICBBAuGCfCAgoQIxjwBRjJAhgnwgIFEAAYgATCAhEQLhiXBRjcBBjeBBjgBNgBAcICCBAAGIAEGLQHwgINEAAYgAQYFBiHAhi0B8ICCBAAGBYYHhgKmAMO4gMEGAAgXeIDBBgAIF7iAwQYACBf4gMEGAAgYOIDBBgAIGHiAwQYACBi8QUucoWPjbgSRroGBggBEAEYAZIHBjEuMTMuMaAHwpkBsgcGMC4xMy4xuAfmFMIHBjItMy4xMsgHigGACAE&amp;sclient=gws-wiz-serp#sv=CAMSbBoyKhBlLUYwZmRqS3BRNlhtSTRNMg5GMGZkaktwUTZYbUk0TToOVVV0V0VxU3ZHdnE0RE0gBCoyChxfR3lxMWFvWGpBNUNGN05ZUGc3MlkwUTRfMTA0EhBlLUYwZmRqS3BRNlhtSTRNGAAwARgHIN7nkgpKCBABGAEgASgB" target="_blank" class="w-full py-2 bg-white text-black font-bold text-sm rounded-lg hover:bg-gray-200 transition-colors flex justify-center items-center gap-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+                                            Көру
+                                        </a>
+                                        
+                                        <div class="flex gap-2">
+                                            <button onclick="editMovie(1790257729455)" class="flex-1 py-1.5 bg-blue-600/80 hover:bg-blue-500 text-white text-xs font-medium rounded-lg transition-colors backdrop-blur-sm">Өңдеу</button>
+                                            <button onclick="promptDelete(1790257729455)" class="flex-1 py-1.5 bg-red-600/80 hover:bg-red-500 text-white text-xs font-medium rounded-lg transition-colors backdrop-blur-sm">Өшіру</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div><div class="relative overflow-hidden rounded-xl aspect-[2/3] group shadow-lg border border-white/10 bg-gray-900">
+                            <img src="https://files.itv.uz/uploads/content/poster/2021/11/22/1f44d1a16f34cc029eb6d4ed173df3c6-q-700x1002.jpeg" alt="Чем мы кормим наших детей?" onerror="this.src='https://placehold.co/400x600/222/FFF?text=Image+Not+Found'" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out">
+                            
+                            <!-- Hover Overlay -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-4 z-10">
+                                
+                                <div class="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300">
+                                    <h3 class="text-white font-bold text-lg leading-tight mb-1 truncate">Чем мы кормим наших детей?</h3>
+                                    <span class="block text-orange-400 font-medium text-sm mb-4">2021</span>
+                                    
+                                    <div class="flex flex-col gap-2">
+                                        <a href="https://www.google.com/search?q=%D1%87%D0%B5%D0%BC+%D0%BC%D1%8B+%D0%BA%D0%BE%D1%80%D0%BC%D0%B8%D0%BC+%D0%BD%D0%B0%D1%88%D0%B8%D1%85+%D0%B4%D0%B5%D1%82%D0%B5%D0%B9+2021&amp;newwindow=1&amp;sca_esv=4c5de4241442eb86&amp;biw=1920&amp;bih=1065&amp;sxsrf=APpeQnvL-RUZApbWHpjyJc-EVEdf6CUFuA%3A1790256939991&amp;ei=Kye1aoKJPPuIxc8P0ZelyAI&amp;oq=%D1%87%D0%B5%D0%BC+%D0%BC%D1%8B+%D0%BA%D0%BE%D1%80%D0%BC%D0%B8%D0%BC&amp;gs_lp=Egxnd3Mtd2l6LXNlcnAiGNGH0LXQvCDQvNGLINC60L7RgNC80LjQvCoKCAAYgAQYExi0BzIKEAAYgAQYExi0BzIHEAAYgAQYEzIIEAAYFhgeGBMyCBAAGBYYHhgTMggQABgWGB4YEzIIEAAYFhgeGBMyCBAAGBYYHhgTMggQABgWGB4YEzIFEAAY7wUyBRAAGO8FSKZ2UMcZWKNCcAF4AZABAJgBxAGgAYgRqgEEMC4xM7ABALgBAcgBAPgBAZgCDaACrRKoAgDCAgQQLhgnwgIFEC4YgATCAgUQABiABMICERAuGJcFGNwEGN4EGOAE2AEBwgIIEAAYgAQYtAfCAgoQABiABBgUGIcCwgINEAAYgAQYFBiHAhi0B8ICDRAuGIAEGBQYhwIYtAfCAggQABiABBjHA8ICChAAGBYYHhgTGArCAggQABiABBiiBMICDBAAGIAEGA0YExi0B8ICCRAAGIAEGA0YE5gDAuIDBBgAIF3iAwQYACBe4gMEGAAgX-IDBBgAIGDiAwQYACBh4gMEGAAgYvEFuailz-aQgji6BgYIARABGBSSBwYwLjExLjKgB76QAbIHBjAuMTEuMrgHrRLCBwUyLTQuOcgHe4AIAQ&amp;sclient=gws-wiz-serp" target="_blank" class="w-full py-2 bg-white text-black font-bold text-sm rounded-lg hover:bg-gray-200 transition-colors flex justify-center items-center gap-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+                                            Көру
+                                        </a>
+                                        
+                                        <div class="flex gap-2">
+                                            <button onclick="editMovie(1790257586231)" class="flex-1 py-1.5 bg-blue-600/80 hover:bg-blue-500 text-white text-xs font-medium rounded-lg transition-colors backdrop-blur-sm">Өңдеу</button>
+                                            <button onclick="promptDelete(1790257586231)" class="flex-1 py-1.5 bg-red-600/80 hover:bg-red-500 text-white text-xs font-medium rounded-lg transition-colors backdrop-blur-sm">Өшіру</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div><div class="relative overflow-hidden rounded-xl aspect-[2/3] group shadow-lg border border-white/10 bg-gray-900">
+                            <img src="https://kinopoisk-ru.clstorage.net/15Wz5M170/4ba426n0Dd2/FMXaod2Meg7DqFQ21vtZUl4-ZQID4z7eSS3dq47wL92Svv3Ci_1RMRf3AVttWUOJ7Ilc17cQwDdwm6NiNINkZoLVD7YZy62Z1C9HdwEsDkCMKaXShbEqD05pCbwZO-PXnjShSwQ3WToPppLKqs5X3HyMS1Ulh4bm44c6pz9OMbJXidgsX18zhYVynP9eeJFWiXwtxt4itBCQb5zqwbcg0t087csD8JN9xSYZBTDJXB59hkRS6AQQZuLFtH95zvoy1ghQb50dcktFspOyW3OUWkTw5YVYrv0XEKudpMX3LpwUd6JKjHiVfAft10_6z9iSdgjL1ypJ0eOgi7c6for0fhqK3inf0bmMTbZU_h-5khkG9GjC1qs72FRhXGCJcq4XkrAihUV9nTOBqFXLtwLZ1P5FCt8ghJgjIo03vLfCNPsQit4p0xp4xY22H70ZMB4STTAiT1jvvFhTrV9tjz0s2V48b4tCsRb6iKPRjnDM0V59AINbqYaQryoBefT5CTvxmMHboxIct83Kspl8EbuYngD9Zczao7LWmKUdoIs-6ZmXNKQLgHhU_kEiF4w6hNVev4JFU2pBE-6vwLS5v8o19p6OWCAQEnwGinoX-l4wm5LBPKnCW2kykJxm3mvDfa7fnzYqycVxHniJL9WFOo5XU37Iyl2rQBcqo037dvGBsrgYxBCn016wQwU11rYcc5ERCb7lRlsiPtKapNQgzb2m11a1bE1F-dU9xuURS3RFnNp3AAHS7MeWa-yNN_y9wrIyUIiQr5RZvUeMtl73nn7UGEB078edqz8Q1GNWKk3_KBRc-epIQXVe80Cnmou9StMa9cpGlKrN0GCuAfF8coI9ud7NX6CSXjdDhjIQ-9hwlVpPNCiO26Z535RpVKyPta8cXfimwUy00j1B51zNNMreUn5IiduoRZ2nKsH4ezmPM76dyxtr2BR1ggx-X7ObORYUwTOpT5noM9PWKZKoQDguXVp95cxFv5uzASiVwrvIVR45zIkdpQQQriSOdr36gHy5FkMbKVgR_UJKdp54FnMUnUQ0p43dKD4e1-Zb4Y32LhFdeSdAgfxReIdjkw4zCZ3b_wjJVWjI36dvwb5-90p1uF_EXuMaHrCGgreXfNh7lZjM-6nGnCb03hklUytLdKeWXD-vgcI0WL7F6xmOfAXb0vfAw9ZlSNmjJI01uz7B-bpVDJMr31I8CkRyGTDYOBZQTLVmhpLj8RYQbpvpyzKiHNs4pwGF_JLxRuASCryH1l62i8WV7MXf4KuNPb-4wfS41EyTrBMW-89HMVxy2zjVkQh-psuY67QX22ObK8S2rlcVfSQJhLdYusIvXQE6DR4Zu4QB1GqJnysqTHw8uQr8NpCAliYf1LLCxznQfBm33FaEfWiHWOe00JGlm6jPsi3Un3psCoz2Ef7PoZ-FsIYeFHHICRUlzleiLAL8c_DI8zPSxdRvH17zjQt4GX4WdFHdBPYhypop_BZe75uhBnem1JawIsLNsJP0TebShD1HHBU9iYscJcSYKy9FNn71x7Q6n4AaK90U8E4E9pZw0TAV0kfw4Y2SqLmdEK6TJo-xJlMe-OoEwr6dM8-pmse7z1ZeNMTMnaXBUKHkwzZ6MMW9f9HEHi3cUXCDBzsYsNixHNmFOK0D26q6Gt-lH2qA9i5TXDVnAUJ5HfWCZVGKvUDUlvkDyppjzxCkZEK-8zdPv7XWw5mkUxJzQUww3n_W95tQSHTqTRwgdtvYoh0rj_pnnN-xYgwLM5m6R-raC_WCE5U1QUXRJYWf4ScF-_V5AP311gOSK9jdeMzMuVG0EfgakgxxpkwQ5vEa3uSe4I8wJ5-etugJCXQVs45vXIz6iJTVvoYE3qTFmahuRrl6cgexdtqAE-3UGvMNTXHeMxYzWl-J8-2FnGo1kJClFeyO-GgSG_xuzYs3EHDAr9ID_ABWn7pKTRwgANXuo4lze3CJP7PXBtinlZm_DYk2n_vf8Z6ZA75pzFujs1cSJhNjDP5vVdY_r4FON1M5juAbh_BEGRZ7ykJWpAQc5-8DvTV9D7W6XYtZ4ZAd-g-EeRk91DEUnk-xLwtRIz2Q2qvaKsd17dmV8aZCRTWYs0fn0g15jpnS-wpIVawJleTqQ3i6NY85eh_FUG3fGfOKzLHQP5jxVJ7JMW7MXGJ2kdDkmi5E_e0TFf0uSQV-UDHKotfHskxZnLJFypnkRtXi6wz8fjdAv78QDlauXN4xBkXyWfeT_hZfz3UgBR4qu1JY5lttQ3Bl1h63q4ZOONM5xyhUTrdAnhQ6RspWYgRcKehCN3QxQ7vymQCfoBDcscmBP9t0lbhYXAk47wSRZjVf2yzVoMxwqdqW9W5FjDDaPYWj2UzyytiVPMxD3q2HHabqwH_xsoH09tzDn6wSlPXCSnZev9fzXZiNe6EO1Gk2n9QvWasPduBSlLjqion3lnHP6ZWD-szcUn1Gy1LgThap4kp8sTJK9bmWDd8pWtw3TAR-2_LQ_hUdibAmz5QvNd0X6lqqwXBnGh6xbQsDtlxywSiVwntC3xQ6CwTb7E2d4C3KPjF3TX74UQPfKFNbt8xEOxD1lzPbnIY46cISaDyT2yLe5M41KdRTMaRBATiZMIjoGgo1z1nV-wLLViuLUGYgTngz_sZzudGEmiHUUzoCg_mSOt-52t6B9WyEU-nxndkjHSiNeCKeVrDtggv-0DZCZ1SMOMYcV7SADB1gTpWpJQPw__xNenheSlGnnZLzzgb32Dtd_BHdT7DpBNZh-RBYqpwqR3_h1Z43o4UB9p5ziGfZjDfJVpx7QIQWKMZWZq6AtD_xwzN2kskfpBpatc1MuNo4lL6Ylgv5KMIToHtWWq_TaoY6YR-Q8icERfRYMMqg2gS5AN1UO8SC0yhBnOoojH-6-E50f53E1utVGrxHQf6QtNi71NnD-CaFG6xxmd6uV62LvOjXlbdqBcH2m_uOoRXDNEZWFLPIAFPhi1imKk" alt="Сыт по горло" onerror="this.src='https://placehold.co/400x600/222/FFF?text=Image+Not+Found'" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out">
+                            
+                            <!-- Hover Overlay -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-4 z-10">
+                                
+                                <div class="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300">
+                                    <h3 class="text-white font-bold text-lg leading-tight mb-1 truncate">Сыт по горло</h3>
+                                    <span class="block text-orange-400 font-medium text-sm mb-4">2014</span>
+                                    
+                                    <div class="flex flex-col gap-2">
+                                        <a href="https://www.google.com/search?q=%D1%81%D1%8B%D1%82+%D0%BF%D0%BE+%D0%B3%D0%BE%D1%80%D0%BB%D0%BE+2014&amp;newwindow=1&amp;sca_esv=4c5de4241442eb86&amp;sxsrf=APpeQntyJGiAFF7WQBH5_hZuXYFkNZh05w%3A1790256676028&amp;ei=JCa1av-YAaXQi-gPwpmceQ&amp;oq=%D1%81%D1%8B%D1%82+%D0%BF%D0%BE+%D0%B3%D0%BE%D1%80+2014&amp;gs_lp=Egxnd3Mtd2l6LXNlcnAiF9GB0YvRgiDQv9C-INCz0L7RgCAyMDE0KgYIABgHGB4yBhAAGAcYHjIGEAAYBxgeMgYQABgHGB4yCBAAGAUYBxgeMgYQABgHGB4yCBAAGAUYBxgeMgUQABjvBTIFEAAY7wUyBRAAGO8FMgUQABjvBUiqHFAAWJ4TcAB4AJABAJgBxwGgAd0NqgEEMC4xMLABALgBA8gBAPgBAZgCBqACtgjCAggQABiABBiiBJgDAOIDBBgAIF3iAwQYACBe4gMEGAAgX-IDBBgAIGDiAwQYACBh4gMEGAAgYpIHAzAuNqAHwkayBwMwLja4B7YIwgcFMi0zLjPIBzGACAE&amp;sclient=gws-wiz-serp" target="_blank" class="w-full py-2 bg-white text-black font-bold text-sm rounded-lg hover:bg-gray-200 transition-colors flex justify-center items-center gap-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+                                            Көру
+                                        </a>
+                                        
+                                        <div class="flex gap-2">
+                                            <button onclick="editMovie(1790256913967)" class="flex-1 py-1.5 bg-blue-600/80 hover:bg-blue-500 text-white text-xs font-medium rounded-lg transition-colors backdrop-blur-sm">Өңдеу</button>
+                                            <button onclick="promptDelete(1790256913967)" class="flex-1 py-1.5 bg-red-600/80 hover:bg-red-500 text-white text-xs font-medium rounded-lg transition-colors backdrop-blur-sm">Өшіру</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div><div class="relative overflow-hidden rounded-xl aspect-[2/3] group shadow-lg border border-white/10 bg-gray-900">
+                            <img src="https://kinopoisk-ru.clstorage.net/15Wz5M170/4ba426n0Dd2/FMXaod2Meg7DqFQ21vtZUl4-ZQID4z7eSS3dq47wL92Svv3Ci_1RMRf3AVttWUOJ7IndgTRQweIz27Uj4ddkZoHUjzYZyu3PFC8GdgNvmZVYvHHSxLEqD05pCbwZO-PXnjShSwQ3WToPppLKqs5X3HyMS1Ulh4bm44c6pz9OMbJXidgsX18zhYVynP9eeJFWiXwtxt4itBCQb5zqwbcg0t087csD8JN9xSYZBTDJXB59hkRS6AQQZuLFtH95zvoy1ghQb50dcktFspOyW3OUWkTw5YVYrv0XEKudpMX3LpwUd6JKjHiVfAft10_6z9iSdgjL1ypJ0eOgi7c6for0fhqK3inf0bmMTbZU_h-5khkG9GjC1qs72FRhXGCJcq4XkrAihUV9nTOBqFXLtwLZ1P5FCt8ghJgjIo03vLfCNPsQit4p0xp4xY22H70ZMB4STTAiT1jvvFhTrV9tjz0s2V48b4tCsRb6iKPRjnDM0V59AINbqYaQryoBefT5CTvxmMHboxIct83Kspl8EbuYngD9Zczao7LWmKUdoIs-6ZmXNKQLgHhU_kEiF4w6hNVev4JFU2pBE-6vwLS5v8o19p6OWCAQEnwGinoX-l4wm5LBPKnCW2kykJxm3mvDfa7fnzYqycVxHniJL9WFOo5XU37Iyl2rQBcqo037dvGBsrgYxBCn016wQwU11rYcc5ERCb7lRlsiPtKapNQgzb2m11a1bE1F-dU9xuURS3RFnNp3AAHS7MeWa-yNN_y9wrIyUIiQr5RZvUeMtl73nn7UGEB078edqz8Q1GNWKk3_KBRc-epIQXVe80Cnmou9StMa9cpGlKrN0GCuAfF8coI9ud7NX6CSXjdDhjIQ-9hwlVpPNCiO26Z535RpVKyPta8cXfimwUy00j1B51zNNMreUn5IiduoRZ2nKsH4ezmPM76dyxtr2BR1ggx-X7ObORYUwTOpT5noM9PWKZKoQDguXVp95cxFv5uzASiVwrvIVR45zIkdpQQQriSOdr36gHy5FkMbKVgR_UJKdp54FnMUnUQ0p43dKD4e1-Zb4Y32LhFdeSdAgfxReIdjkw4zCZ3b_wjJVWjI36dvwb5-90p1uF_EXuMaHrCGgreXfNh7lZjM-6nGnCb03hklUytLdKeWXD-vgcI0WL7F6xmOfAXb0vfAw9ZlSNmjJI01uz7B-bpVDJMr31I8CkRyGTDYOBZQTLVmhpLj8RYQbpvpyzKiHNs4pwGF_JLxRuASCryH1l62i8WV7MXf4KuNPb-4wfS41EyTrBMW-89HMVxy2zjVkQh-psuY67QX22ObK8S2rlcVfSQJhLdYusIvXQE6DR4Zu4QB1GqJnysqTHw8uQr8NpCAliYf1LLCxznQfBm33FaEfWiHWOe00JGlm6jPsi3Un3psCoz2Ef7PoZ-FsIYeFHHICRUlzleiLAL8c_DI8zPSxdRvH17zjQt4GX4WdFHdBPYhypop_BZe75uhBnem1JawIsLNsJP0TebShD1HHBU9iYscJcSYKy9FNn71x7Q6n4AaK90U8E4E9pZw0TAV0kfw4Y2SqLmdEK6TJo-xJlMe-OoEwr6dM8-pmse7z1ZeNMTMnaXBUKHkwzZ6MMW9f9HEHi3cUXCDBzsYsNixHNmFOK0D26q6Gt-lH2qA9i5TXDVnAUJ5HfWCZVGKvUDUlvkDyppjzxCkZEK-8zdPv7XWw5mkUxJzQUww3n_W95tQSHTqTRwgdtvYoh0rj_pnnN-xYgwLM5m6R-raC_WCE5U1QUXRJYWf4ScF-_V5AP311gOSK9jdeMzMuVG0EfgakgxxpkwQ5vEa3uSe4I8wJ5-etugJCXQVs45vXIz6iJTVvoYE3qTFmahuRrl6cgexdtqAE-3UGvMNTXHeMxYzWl-J8-2FnGo1kJClFeyO-GgSG_xuzYs3EHDAr9ID_ABWn7pKTRwgANXuo4lze3CJP7PXBtinlZm_DYk2n_vf8Z6ZA75pzFujs1cSJhNjDP5vVdY_r4FON1M5juAbh_BEGRZ7ykJWpAQc5-8DvTV9D7W6XYtZ4ZAd-g-EeRk91DEUnk-xLwtRIz2Q2qvaKsd17dmV8aZCRTWYs0fn0g15jpnS-wpIVawJleTqQ3i6NY85eh_FUG3fGfOKzLHQP5jxVJ7JMW7MXGJ2kdDkmi5E_e0TFf0uSQV-UDHKotfHskxZnLJFypnkRtXi6wz8fjdAv78QDlauXN4xBkXyWfeT_hZfz3UgBR4qu1JY5lttQ3Bl1h63q4ZOONM5xyhUTrdAnhQ6RspWYgRcKehCN3QxQ7vymQCfoBDcscmBP9t0lbhYXAk47wSRZjVf2yzVoMxwqdqW9W5FjDDaPYWj2UzyytiVPMxD3q2HHabqwH_xsoH09tzDn6wSlPXCSnZev9fzXZiNe6EO1Gk2n9QvWasPduBSlLjqion3lnHP6ZWD-szcUn1Gy1LgThap4kp8sTJK9bmWDd8pWtw3TAR-2_LQ_hUdibAmz5QvNd0X6lqqwXBnGh6xbQsDtlxywSiVwntC3xQ6CwTb7E2d4C3KPjF3TX74UQPfKFNbt8xEOxD1lzPbnIY46cISaDyT2yLe5M41KdRTMaRBATiZMIjoGgo1z1nV-wLLViuLUGYgTngz_sZzudGEmiHUUzoCg_mSOt-52t6B9WyEU-nxndkjHSiNeCKeVrDtggv-0DZCZ1SMOMYcV7SADB1gTpWpJQPw__xNenheSlGnnZLzzgb32Dtd_BHdT7DpBNZh-RBYqpwqR3_h1Z43o4UB9p5ziGfZjDfJVpx7QIQWKMZWZq6AtD_xwzN2kskfpBpatc1MuNo4lL6Ylgv5KMIToHtWWq_TaoY6YR-Q8icERfRYMMqg2gS5AN1UO8SC0yhBnOoojH-6-E50f53E1utVGrxHQf6QtNi71NnD-CaFG6xxmd6uV62LvOjXlbdqBcH2m_uOoRXDNEZWFLPIAFPhi1imKk" alt="Молоко" onerror="this.src='https://placehold.co/400x600/222/FFF?text=Image+Not+Found'" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out">
+                            
+                            <!-- Hover Overlay -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-4 z-10">
+                                
+                                <div class="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300">
+                                    <h3 class="text-white font-bold text-lg leading-tight mb-1 truncate">Молоко</h3>
+                                    <span class="block text-orange-400 font-medium text-sm mb-4">2012</span>
+                                    
+                                    <div class="flex flex-col gap-2">
+                                        <a href="https://www.google.com/search?q=%D0%BC%D0%BE%D0%BB%D0%BE%D0%BA%D0%BE+%D1%84%D0%B8%D0%BB%D1%8C%D0%BC+2014&amp;oq=%D0%BC%D0%BE%D0%BB%D0%BE%D0%BA%D0%BE+%D1%84%D0%B8%D0%BB%D1%8C%D0%BC+&amp;gs_lcrp=EgZjaHJvbWUqCQgJEAAYExiABDIGCAAQRRg5MgkIARAuGBMYgAQyCQgCEC4YExiABDIJCAMQABgTGIAEMgkIBBAAGBMYgAQyCQgFEAAYExiABDIJCAYQABgTGIAEMgkIBxAAGBMYgAQyCQgIEAAYExiABDIJCAkQABgTGIAE0gEIOTEwMWowajeoAgCwAgA&amp;sourceid=chrome&amp;source=chrome.ob&amp;ie=UTF-8" target="_blank" class="w-full py-2 bg-white text-black font-bold text-sm rounded-lg hover:bg-gray-200 transition-colors flex justify-center items-center gap-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+                                            Көру
+                                        </a>
+                                        
+                                        <div class="flex gap-2">
+                                            <button onclick="editMovie(1790256841845)" class="flex-1 py-1.5 bg-blue-600/80 hover:bg-blue-500 text-white text-xs font-medium rounded-lg transition-colors backdrop-blur-sm">Өңдеу</button>
+                                            <button onclick="promptDelete(1790256841845)" class="flex-1 py-1.5 bg-red-600/80 hover:bg-red-500 text-white text-xs font-medium rounded-lg transition-colors backdrop-blur-sm">Өшіру</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div><div class="relative overflow-hidden rounded-xl aspect-[2/3] group shadow-lg border border-white/10 bg-gray-900">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzcmRXCoStYjWcDAJbvCLdavDhJC8srxArEKjyD3fJMKTZ_kmR5zlpVIDzYZGUAr3pR6iFKQ&amp;s=10" alt="Основатель" onerror="this.src='https://placehold.co/400x600/222/FFF?text=Image+Not+Found'" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out">
+                            
+                            <!-- Hover Overlay -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-4 z-10">
+                                
+                                <div class="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300">
+                                    <h3 class="text-white font-bold text-lg leading-tight mb-1 truncate">Основатель</h3>
+                                    <span class="block text-orange-400 font-medium text-sm mb-4">2016</span>
+                                    
+                                    <div class="flex flex-col gap-2">
+                                        <a href="https://www.google.com/search?gs_ssp=eJzj4tbP1TcwNKqyNExKMmD0kr-w72Ljhb0X9l3YdGHDxaYLWy_svtijcLHlwg4Q48IeAPssGeQ&amp;q=%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C+%D1%84%D0%B8%D0%BB%D1%8C%D0%BC&amp;oq=%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C&amp;gs_lcrp=EgZjaHJvbWUqDAgBEC4YFBiHAhiABDIPCAAQABgUGIcCGOMCGIAEMgwIARAuGBQYhwIYgAQyBggCEEUYOTIHCAMQABiABDIHCAQQABiABDIHCAUQABiABDIHCAYQABiABDIHCAcQABiABDIHCAgQABiABDIHCAkQABiABNIBCDUyMzNqMGo3qAIAsAIA&amp;sourceid=chrome&amp;source=chrome.ob&amp;ie=UTF-8#sv=CAMSaxoyKhBlLXJCc21BeGlMdzh0UVdNMg5yQnNtQXhpTHc4dFFXTToOckJzbUF4aUx3OHRRV00gBCoxChtfV1JtMWFxT2VEcHFpaGJJUGlxenA2QThfOTgSEGUtckJzbUF4aUx3OHRRV00YADABGAcgpe_75gZKCBABGAEgASgB" target="_blank" class="w-full py-2 bg-white text-black font-bold text-sm rounded-lg hover:bg-gray-200 transition-colors flex justify-center items-center gap-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+                                            Көру
+                                        </a>
+                                        
+                                        <div class="flex gap-2">
+                                            <button onclick="editMovie(1790253440026)" class="flex-1 py-1.5 bg-blue-600/80 hover:bg-blue-500 text-white text-xs font-medium rounded-lg transition-colors backdrop-blur-sm">Өңдеу</button>
+                                            <button onclick="promptDelete(1790253440026)" class="flex-1 py-1.5 bg-red-600/80 hover:bg-red-500 text-white text-xs font-medium rounded-lg transition-colors backdrop-blur-sm">Өшіру</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div><div class="relative overflow-hidden rounded-xl aspect-[2/3] group shadow-lg border border-white/10 bg-gray-900">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQh5wru6FYOhC97EhrySMrauvU85a6peZn7kGood6oSevO9h9q9vq-oDAk&amp;s=10" alt="В погоне за счастьем" onerror="this.src='https://placehold.co/400x600/222/FFF?text=Image+Not+Found'" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out">
+                            
+                            <!-- Hover Overlay -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-4 z-10">
+                                
+                                <div class="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300">
+                                    <h3 class="text-white font-bold text-lg leading-tight mb-1 truncate">В погоне за счастьем</h3>
+                                    <span class="block text-orange-400 font-medium text-sm mb-4">2006</span>
+                                    
+                                    <div class="flex flex-col gap-2">
+                                        <a href="https://www.google.com/search?q=%D0%92+%D0%BF%D0%BE%D0%B3%D0%BE%D0%BD%D0%B5+%D0%B7%D0%B0+%D1%81%D1%87%D0%B0%D1%81%D1%82%D1%8C%D0%B5%D0%BC&amp;newwindow=1&amp;sca_esv=a930d1138e50c4d8&amp;sxsrf=APpeQnvPT71ZAE-zGEBhqGkLERPtcmGN1A%3A1790253291512&amp;ei=6xi1asHdHr_ChbIPi5v7mA8&amp;uact=5&amp;oq=%D0%92+%D0%BF%D0%BE%D0%B3%D0%BE%D0%BD%D0%B5+%D0%B7%D0%B0+%D1%81%D1%87%D0%B0%D1%81%D1%82%D1%8C%D0%B5%D0%BC&amp;gs_lp=Egxnd3Mtd2l6LXNlcnAiJdCSINC_0L7Qs9C-0L3QtSDQt9CwINGB0YfQsNGB0YLRjNC10LwyBRAuGIAEMg0QABiABBgUGIcCGLQHMgoQABiABBgUGIcCMgUQABiABDIFEAAYgAQyCBAAGIAEGLQHMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIUEC4YgAQYlwUY3AQY3gQY4ATYAQJIugtQxwdYxwdwAXgAkAEAmAGpAaABvwKqAQMwLjKwAQC4AQPIAQD4AQL4AQGYAgKgAr0BwgIKEAAYRxjWBBiwA8ICFxAuGNwGGLgGGNoGGNgCGMgDGLAD2AEBwgIUEC4Y3AYYuAYY2gYYyAMYsAPYAQGYAwDiAwQYACBd4gMEGAAgXuIDBBgAIF_iAwQYACBg4gMEGAAgYeIDBBgAIGKIBgGQBgu6BgQIARgZugYGCAIQARgUkgcDMS4xoAfCG7IHAzAuMbgHswHCBwUyLTEuMcgHD4AIAQ&amp;sclient=gws-wiz-serp#sv=CAMSXhoyKhBlLWdKZ3RBY3NFQ01OdlhNMg5nSmd0QWNzRUNNTnZYTToObVY0djVoWTdNb21UQ00gBCokCg40SlVTamVZM1F6QldITRIQZS1nSmd0QWNzRUNNTnZYTRgAMAEYByDalPn_B0oIEAEYASABKAE" target="_blank" class="w-full py-2 bg-white text-black font-bold text-sm rounded-lg hover:bg-gray-200 transition-colors flex justify-center items-center gap-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+                                            Көру
+                                        </a>
+                                        
+                                        <div class="flex gap-2">
+                                            <button onclick="editMovie(1790253348466)" class="flex-1 py-1.5 bg-blue-600/80 hover:bg-blue-500 text-white text-xs font-medium rounded-lg transition-colors backdrop-blur-sm">Өңдеу</button>
+                                            <button onclick="promptDelete(1790253348466)" class="flex-1 py-1.5 bg-red-600/80 hover:bg-red-500 text-white text-xs font-medium rounded-lg transition-colors backdrop-blur-sm">Өшіру</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div><div class="relative overflow-hidden rounded-xl aspect-[2/3] group shadow-lg border border-white/10 bg-gray-900">
+                            <img src="https://kt.server-img.lfstrm.tv/images/cms/abcvod/1b6e0269-3119-4246-bc8d-90d7b3f07df6.jpg?width=636&amp;height=954&amp;quality=93" alt="Ауру" onerror="this.src='https://placehold.co/400x600/222/FFF?text=Image+Not+Found'" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out">
+                            
+                            <!-- Hover Overlay -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-4 z-10">
+                                
+                                <div class="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300">
+                                    <h3 class="text-white font-bold text-lg leading-tight mb-1 truncate">Ауру</h3>
+                                    <span class="block text-orange-400 font-medium text-sm mb-4">2026</span>
+                                    
+                                    <div class="flex flex-col gap-2">
+                                        <a href="https://www.google.com/search?q=%D0%B0%D1%83%D1%80%D1%83+%D1%84%D0%B8%D0%BB%D1%8C%D0%BC&amp;newwindow=1&amp;sca_esv=92f84722619c2e88&amp;sxsrf=APpeQns1qmmD__l6f9g_26ceMZ15wEnJSw%3A1787631925837&amp;ei=NRmNaq_UMuKrxc8PyriNoAo&amp;biw=1920&amp;bih=1065&amp;oq=%D0%B0%D1%83%D1%80%D1%83+&amp;gs_lp=Egxnd3Mtd2l6LXNlcnAiCdCw0YPRgNGDICoCCAEyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAESM4LUB9YH3ABeAGQAQCYAcYBoAHGAaoBAzAuMbABALgBAcgBAPgBAZgCAqAC1wHCAgoQABhHGNYEGLADwgIXEC4Y3AYYuAYY2gYY2AIYyAMYsAPYAQGYAwDiAwQYACBd4gMEGAAgXuIDBBgAIF_iAwQYACBg4gMEGAAgYeIDBBgAIGKIBgGQBgq6BgQIARgZkgcFMS4wLjGgB4kGsgcDMi0xuAfMAcIHBTItMS4xyAcNgAgB&amp;sclient=gws-wiz-serp" target="_blank" class="w-full py-2 bg-white text-black font-bold text-sm rounded-lg hover:bg-gray-200 transition-colors flex justify-center items-center gap-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+                                            Көру
+                                        </a>
+                                        
+                                        <div class="flex gap-2">
+                                            <button onclick="editMovie(1790253108985)" class="flex-1 py-1.5 bg-blue-600/80 hover:bg-blue-500 text-white text-xs font-medium rounded-lg transition-colors backdrop-blur-sm">Өңдеу</button>
+                                            <button onclick="promptDelete(1790253108985)" class="flex-1 py-1.5 bg-red-600/80 hover:bg-red-500 text-white text-xs font-medium rounded-lg transition-colors backdrop-blur-sm">Өшіру</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div><div class="relative overflow-hidden rounded-xl aspect-[2/3] group shadow-lg border border-white/10 bg-gray-900">
+                            <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTvtjHvYSwlydSJjvcTzj7JpoyRw_Xoy64wSxekKi0Va8u2yoJ5" alt="Обсессия" onerror="this.src='https://placehold.co/400x600/222/FFF?text=Image+Not+Found'" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out">
+                            
+                            <!-- Hover Overlay -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-4 z-10">
+                                
+                                <div class="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300">
+                                    <h3 class="text-white font-bold text-lg leading-tight mb-1 truncate">Обсессия</h3>
+                                    <span class="block text-orange-400 font-medium text-sm mb-4">2025</span>
+                                    
+                                    <div class="flex flex-col gap-2">
+                                        <a href="https://www.google.com/search?gs_ssp=eJzj4tVP1zc0rCg3KywqSCkwYPQSuLDvwsaLjRe2XmwEkjsu9gMA5V0QiA&amp;q=%D0%BE%D0%B1%D1%81%D0%B5%D1%81%D1%81%D0%B8%D1%8F&amp;oq=%D0%BE%D1%8E%D1%81%D0%B5&amp;gs_lcrp=EgZjaHJvbWUqCQgBEC4YDRiABDIGCAAQRRg5MgkIARAuGA0YgAQyCQgCEAAYDRiABDIJCAMQABgNGIAEMgkIBBAAGA0YgAQyCQgFEAAYDRiABDIJCAYQABgNGIAEMgkIBxAAGA0YgAQyCQgIEAAYDRiABNIBCDYxMzVqMGo3qAIAsAIA&amp;sourceid=chrome&amp;source=chrome.ob&amp;ie=UTF-8#sv=CAMScxoyKg9BbGZjWUs2TjBUT2dpTToyD0FsZmNZSzZOMFRPZ2lNOjoOSkRYTEQyZVNYaWpYZ00gBCo5CiRCMjQyMjQxNi1CNzRDLTREMDgtQTRGQy1BMjUwNkI3MEZCRUYSD0FsZmNZSzZOMFRPZ2lNOhgBMAEYByC1guWKDUoIEAEYASABKAE" target="_blank" class="w-full py-2 bg-white text-black font-bold text-sm rounded-lg hover:bg-gray-200 transition-colors flex justify-center items-center gap-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+                                            Көру
+                                        </a>
+                                        
+                                        <div class="flex gap-2">
+                                            <button onclick="editMovie(1790252668016)" class="flex-1 py-1.5 bg-blue-600/80 hover:bg-blue-500 text-white text-xs font-medium rounded-lg transition-colors backdrop-blur-sm">Өңдеу</button>
+                                            <button onclick="promptDelete(1790252668016)" class="flex-1 py-1.5 bg-red-600/80 hover:bg-red-500 text-white text-xs font-medium rounded-lg transition-colors backdrop-blur-sm">Өшіру</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div><div class="relative overflow-hidden rounded-xl aspect-[2/3] group shadow-lg border border-white/10 bg-gray-900">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0LISXN77Bi59SBKE3lLoc9OjrDqYFvnPUpeU0-8RNWfFDc6LlFUEL2QmndcQx7r1x17Hjbg&amp;s=10" alt="Еще по одной" onerror="this.src='https://placehold.co/400x600/222/FFF?text=Image+Not+Found'" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out">
+                            
+                            <!-- Hover Overlay -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-4 z-10">
+                                
+                                <div class="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300">
+                                    <h3 class="text-white font-bold text-lg leading-tight mb-1 truncate">Еще по одной</h3>
+                                    <span class="block text-orange-400 font-medium text-sm mb-4">2020</span>
+                                    
+                                    <div class="flex flex-col gap-2">
+                                        <a href="https://www.google.com/search?gs_ssp=eJzj4tVP1zc0zIiPrzQ1Lsk2YPQSu7D1YueFrQoX9l_Yp3Bh34UtF_YCyZ0AQxMULQ&amp;q=%D0%B5%D1%89%D0%B5+%D0%BF%D0%BE+%D0%BE%D0%B4%D0%BD%D0%BE%D0%B9&amp;oq=%D0%B5%D1%89%D0%B5+%D0%BF%D0%BE+%D0%BE%D0%B4&amp;gs_lcrp=EgZjaHJvbWUqBwgBEC4YgAQyBggAEEUYOTIHCAEQLhiABDIHCAIQABiABDIHCAMQABiABDIHCAQQABiABDIHCAUQABiABDIHCAYQABiABDIICAcQABgWGB4yCAgIEAAYFhge0gEIOTUwOGowajeoAgCwAgA&amp;sourceid=chrome&amp;source=chrome.ob&amp;ie=UTF-8#sv=CAMSbBoyKhBlLU55bV9RU29VeEhCbkRNMg5OeW1fUVNvVXhIQm5ETToOTnltX1FTb1V4SEJuRE0gBCoyChxfLWhXMWFxSGxFT21faGJJUHRZRHQ4UWdfMTAzEhBlLU55bV9RU29VeEhCbkRNGAAwARgHIJq23aENSggQARgBIAEoAQ" target="_blank" class="w-full py-2 bg-white text-black font-bold text-sm rounded-lg hover:bg-gray-200 transition-colors flex justify-center items-center gap-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+                                            Көру
+                                        </a>
+                                        
+                                        <div class="flex gap-2">
+                                            <button onclick="editMovie(1790252593023)" class="flex-1 py-1.5 bg-blue-600/80 hover:bg-blue-500 text-white text-xs font-medium rounded-lg transition-colors backdrop-blur-sm">Өңдеу</button>
+                                            <button onclick="promptDelete(1790252593023)" class="flex-1 py-1.5 bg-red-600/80 hover:bg-red-500 text-white text-xs font-medium rounded-lg transition-colors backdrop-blur-sm">Өшіру</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div><div class="relative overflow-hidden rounded-xl aspect-[2/3] group shadow-lg border border-white/10 bg-gray-900">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRi0-BGFX3tK05KxYrFfyHv39qrA4XkE7JBt3SD5nQsMEgPtARpG3oEUidAt2xpzUSdH7w7&amp;s=10" alt="500 дней лета" onerror="this.src='https://placehold.co/400x600/222/FFF?text=Image+Not+Found'" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out">
+                            
+                            <!-- Hover Overlay -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-4 z-10">
+                                
+                                <div class="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300">
+                                    <h3 class="text-white font-bold text-lg leading-tight mb-1 truncate">500 дней лета</h3>
+                                    <span class="block text-orange-400 font-medium text-sm mb-4">2009</span>
+                                    
+                                    <div class="flex flex-col gap-2">
+                                        <a href="https://www.google.com/search?q=500+%D0%B4%D0%BD%D0%B5%D0%B9+%D0%BB%D0%B5%D1%82%D0%B0&amp;newwindow=1&amp;sca_esv=6b89c47721840978&amp;biw=1920&amp;bih=1065&amp;sxsrf=APpeQntj9A6rzvSjtedanJKxeC8Nmt5R2g%3A1783951385309&amp;ei=GfBUaua6EuKC9u8P7KS-qQk&amp;oq=500+&amp;gs_lp=Egxnd3Mtd2l6LXNlcnAiBDUwMCAqAggAMgQQIxgnMgQQIxgnMgsQLhiABBiKBRiRAjILEC4YgAQYigUYkQIyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgARIzx1QjQxYgBFwAXgBkAEAmAGiAqAB_QeqAQMyLTS4AQHIAQD4AQGYAgWgAq0IqAIPwgIHECMY6gIYJ8ICChAjGPAFGOoCGCfCAhoQLhiABBiKBRiRAhjnBhjIAxjqAhi0AtgBAcICCxAuGJECGIAEGIoFwgIKEAAYgAQYigUYQ5gDC_EFIwcFsHlfXF-6BgYIARABGAiSBwUxLjAuNKAHuD2yBwMyLTS4B6EIwgcFMi0zLjLIByeACAE&amp;sclient=gws-wiz-serp#sv=CAMSaxoyKhBlLS1WY1lXUXRMeDdFczlNMg4tVmNZV1F0THg3RXM5TToOLVZjWVdRdEx4N0VzOU0gBCoxChtfVlJXMWFvZnFDSWVuaGJJUC1lX0x5QWdfOTESEGUtLVZjWVdRdEx4N0VzOU0YADABGAcg4fCNkwlKCBABGAEgASgB" target="_blank" class="w-full py-2 bg-white text-black font-bold text-sm rounded-lg hover:bg-gray-200 transition-colors flex justify-center items-center gap-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+                                            Көру
+                                        </a>
+                                        
+                                        <div class="flex gap-2">
+                                            <button onclick="editMovie(1790252432185)" class="flex-1 py-1.5 bg-blue-600/80 hover:bg-blue-500 text-white text-xs font-medium rounded-lg transition-colors backdrop-blur-sm">Өңдеу</button>
+                                            <button onclick="promptDelete(1790252432185)" class="flex-1 py-1.5 bg-red-600/80 hover:bg-red-500 text-white text-xs font-medium rounded-lg transition-colors backdrop-blur-sm">Өшіру</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div><div class="relative overflow-hidden rounded-xl aspect-[2/3] group shadow-lg border border-white/10 bg-gray-900">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgh6-PlMN4W0qXY5cv4YoP7k0_PMd6szh3dYtq8-0azrgfS5j8" alt="Одинокие волки" onerror="this.src='https://placehold.co/400x600/222/FFF?text=Image+Not+Found'" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out">
+                            
+                            <!-- Hover Overlay -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-4 z-10">
+                                
+                                <div class="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300">
+                                    <h3 class="text-white font-bold text-lg leading-tight mb-1 truncate">Одинокие волки</h3>
+                                    <span class="block text-orange-400 font-medium text-sm mb-4">2024</span>
+                                    
+                                    <div class="flex flex-col gap-2">
+                                        <a href="https://www.google.com/search?q=%D0%B2%D0%BE%D0%BB%D0%BA%D0%B8+%D1%84%D0%B8%D0%BB%D1%8C%D0%BC+2024&amp;newwindow=1&amp;sca_esv=6b89c47721840978&amp;sxsrf=APpeQnvy8Fkcb9NcLAoN8CqgJkt87-My2g%3A1783951119658&amp;ei=D-9UatvZJ_7k7M8PxseagQw&amp;biw=1920&amp;bih=1065&amp;oq=%D0%92%D0%BE%D0%BB%D0%BA%D0%B8&amp;gs_lp=Egxnd3Mtd2l6LXNlcnAiCtCS0L7Qu9C60LgqAggAMgQQIxgnMgUQLhiABDIFEC4YgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQLhiABDIFEAAYgAQyBRAAGIAESOWNAVD6blivenABeAGQAQCYAfwCoAGKC6oBBTItNC4xuAEByAEA-AEBmAIGoALMC6gCDMICChAjGPAFGOoCGCfCAgcQIxjqAhgnwgIWEAAYgAQYigUYQxjnBhjqAhi0AtgBAcICFhAuGIAEGIoFGEMY5wYY6gIYtALYAQHCAgsQLhiABBjHARjRA5gDDPEFKyWbXXufhRe6BgYIARABGAGSBwcxLjAuNC4xoAfycbIHBTItNC4xuAfAC8IHBTItMS41yAc2gAgB&amp;sclient=gws-wiz-serp" target="_blank" class="w-full py-2 bg-white text-black font-bold text-sm rounded-lg hover:bg-gray-200 transition-colors flex justify-center items-center gap-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+                                            Көру
+                                        </a>
+                                        
+                                        <div class="flex gap-2">
+                                            <button onclick="editMovie(1790252305278)" class="flex-1 py-1.5 bg-blue-600/80 hover:bg-blue-500 text-white text-xs font-medium rounded-lg transition-colors backdrop-blur-sm">Өңдеу</button>
+                                            <button onclick="promptDelete(1790252305278)" class="flex-1 py-1.5 bg-red-600/80 hover:bg-red-500 text-white text-xs font-medium rounded-lg transition-colors backdrop-blur-sm">Өшіру</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div><div class="relative overflow-hidden rounded-xl aspect-[2/3] group shadow-lg border border-white/10 bg-gray-900">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIZK2L9kCzLH9nsyov5ct8fQpo63ZqEjfV3hwcx7RGUg&amp;s" alt="Джобс: Империя соблазна" onerror="this.src='https://placehold.co/400x600/222/FFF?text=Image+Not+Found'" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out">
+                            
+                            <!-- Hover Overlay -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-4 z-10">
+                                
+                                <div class="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300">
+                                    <h3 class="text-white font-bold text-lg leading-tight mb-1 truncate">Джобс: Империя соблазна</h3>
+                                    <span class="block text-orange-400 font-medium text-sm mb-4">2013</span>
+                                    
+                                    <div class="flex flex-col gap-2">
+                                        <a href="https://www.google.com/search?q=%D0%B4%D0%B6%D0%BE%D0%B1%D1%81+%D0%B8%D0%BC%D0%BF%D0%B5%D1%80%D0%B8%D1%8F+%D1%81%D0%BE%D0%B1%D0%BB%D0%B0%D0%B7%D0%BD%D0%B0&amp;newwindow=1&amp;sca_esv=70aa846ced6b4820&amp;sxsrf=ANbL-n4kjpegdApVJWm-1RY-yibzsU8ypQ%3A1780421161899&amp;ei=KRIfaurONouBxc8PlYH1mAU&amp;biw=1920&amp;bih=1065&amp;gs_ssp=eJwBOgDF_woKL20vMGo3ajRsczABSirQtNC20L7QsdGBINC40LzQv9C10YDQuNGPINGB0L7QsdC70LDQt9C90LBChCHf&amp;oq=%D0%B4%D0%B6%D0%BE%D0%B1%D1%81&amp;gs_lp=Egxnd3Mtd2l6LXNlcnAiCtC00LbQvtCx0YEqAggAMgUQLhiABDIFEC4YgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBBAAGB4yBBAAGB4yBBAAGB4yBBAAGB4yBBAAGB4yFBAuGIAEGJcFGNwEGN4EGOAE2AEBSL1CUL8PWOQwcAF4AZABAJgB8QGgAcQHqgEFMC40LjG4AQHIAQD4AQGYAgigAtgkqAIQwgIHEC4Y6gIYJ8ICBxAjGOoCGCfCAhcQABiABBiKBRiRAhjnBhjqAhi0AtgBAcICIBAuGIAEGIoFGJECGOcGGMcBGNEDGMgDGOoCGLQC2AEBwgIKEC4YgAQYigUYJ8ICChAjGPAFGMkCGCfCAgwQIxiABBiKBRgTGCfCAhcQLhiABBiKBRiXBRjcBBjeBBjgBNgBAcICFBAuGIAEGJcFGNwEGN4EGN8E2AEBwgIKEC4YFBiHAhiABMICGRAuGBQYhwIYgAQYlwUY3AQY3gQY4ATYAQGYAxDxBY1GOlMAjlSQugYGCAEQARgBkgcJMS4yLjMuNy0yoAfJoQGyBwUwLjIuM7gHgwjCBwcwLjIuMS41yAdIgAgB&amp;sclient=gws-wiz-serp#sv=CAMSXhoyKhBlLUZfR3hQeWpJMXdwWURNMg5GX0d4UHlqSTF3cFlETToOZVdMcDFSQnhGbzZYU00gBCokCg52UlRGbW9rYzJMd29MTRIQZS1GX0d4UHlqSTF3cFlETRgAMAEYByDik_WuCkoIEAEYASABKAE" target="_blank" class="w-full py-2 bg-white text-black font-bold text-sm rounded-lg hover:bg-gray-200 transition-colors flex justify-center items-center gap-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+                                            Көру
+                                        </a>
+                                        
+                                        <div class="flex gap-2">
+                                            <button onclick="editMovie(1790252102674)" class="flex-1 py-1.5 bg-blue-600/80 hover:bg-blue-500 text-white text-xs font-medium rounded-lg transition-colors backdrop-blur-sm">Өңдеу</button>
+                                            <button onclick="promptDelete(1790252102674)" class="flex-1 py-1.5 bg-red-600/80 hover:bg-red-500 text-white text-xs font-medium rounded-lg transition-colors backdrop-blur-sm">Өшіру</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div><div class="relative overflow-hidden rounded-xl aspect-[2/3] group shadow-lg border border-white/10 bg-gray-900">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBR3SnS6LLcv3dxK5y2BJh-5jdjNo-oltMFPgAlrblcVvgO9PgkXXlzTegkNJwLIjQpygxOg&amp;s=10" alt="Тинейджер на миллиард" onerror="this.src='https://placehold.co/400x600/222/FFF?text=Image+Not+Found'" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out">
+                            
+                            <!-- Hover Overlay -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-4 z-10">
+                                
+                                <div class="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300">
+                                    <h3 class="text-white font-bold text-lg leading-tight mb-1 truncate">Тинейджер на миллиард</h3>
+                                    <span class="block text-orange-400 font-medium text-sm mb-4">2011</span>
+                                    
+                                    <div class="flex flex-col gap-2">
+                                        <a href="https://www.google.com/search?q=%D1%82%D0%B8%D0%BD%D0%B5%D0%B9%D0%B4%D0%B6%D0%B5%D1%80+%D0%BD%D0%B0+%D0%BC%D0%B8%D0%BB%D0%BB%D0%B8%D0%B0%D1%80%D0%B4&amp;newwindow=1&amp;sca_esv=70aa846ced6b4820&amp;biw=1920&amp;bih=1065&amp;sxsrf=ANbL-n7OUBPuGvg2sbPhHUZFCltxjUIz7g%3A1780420929569&amp;ei=QREfape7IvCUxc8PyIzeGA&amp;gs_ssp=eJwBOADH_woKL20vMGo2Ml9yMTABSijRgtC40L3QtdC50LTQttC10YAg0L3QsCDQvNC40LvQu9C40LDRgNC099YgMQ&amp;oq=%D1%82%D0%B8%D0%BD%D0%B5%D0%B9&amp;gs_lp=Egxnd3Mtd2l6LXNlcnAiCtGC0LjQvdC10LkqAggBMgUQABiABDIFEC4YgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgQQABgeMgQQABgeMgQQABgeMgQQABgeMhQQLhiABBiXBRjcBBjeBBjgBNgBAUiGSlC4BlijK3ABeAGQAQCYAcgBoAHCB6oBBTAuNC4xuAEByAEA-AEBmAIHoALZJqgCEMICBxAuGOoCGCfCAgcQIxjqAhgnwgIXEAAYgAQYigUYkQIY5wYY6gIYtALYAQHCAhoQLhiABBiKBRiRAhjnBhjIAxjqAhi0AtgBAcICIBAuGIAEGIoFGJECGOcGGMcBGK8BGMgDGOoCGLQC2AEBwgIEECMYJ8ICDRAuGPAFGIAEGIoFGCfCAgoQIxiABBiKBRgnwgILEC4YgAQYxwEY0QPCAhoQLhiABBjHARjRAxiXBRjcBBjeBBjgBNgBAcICCxAuGMcBGNEDGIAEwgIFEAAY7wWYAxDxBWkIWj96ZoRIugYGCAEQARgBkgcJMS4xLjQuOS0xoAfmYbIHBTAuMS40uAf8B8IHBTItMi41yAdEgAgB&amp;sclient=gws-wiz-serp#sv=CAMSaxoyKhBlLVdDOWVnbk5DTkRCQTNNMg5XQzllZ25OQ05EQkEzTToOV0M5ZWduTkNOREJBM00gBCoxChtfVGhPMWF2YjdBYWJYN004UDNMbjk0QU1fNzkSEGUtV0M5ZWduTkNOREJBM00YADABGAcgr8zxtAlKCBABGAEgASgB" target="_blank" class="w-full py-2 bg-white text-black font-bold text-sm rounded-lg hover:bg-gray-200 transition-colors flex justify-center items-center gap-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+                                            Көру
+                                        </a>
+                                        
+                                        <div class="flex gap-2">
+                                            <button onclick="editMovie(1790251912219)" class="flex-1 py-1.5 bg-blue-600/80 hover:bg-blue-500 text-white text-xs font-medium rounded-lg transition-colors backdrop-blur-sm">Өңдеу</button>
+                                            <button onclick="promptDelete(1790251912219)" class="flex-1 py-1.5 bg-red-600/80 hover:bg-red-500 text-white text-xs font-medium rounded-lg transition-colors backdrop-blur-sm">Өшіру</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div><div class="relative overflow-hidden rounded-xl aspect-[2/3] group shadow-lg border border-white/10 bg-gray-900">
+                            <img src="https://media.themoviedb.org/t/p/w220_and_h330_face/16zVbgFLTUaUTG1wQHuGjfWNuDM.jpg" alt="Всегда говори «ДА" onerror="this.src='https://placehold.co/400x600/222/FFF?text=Image+Not+Found'" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out">
+                            
+                            <!-- Hover Overlay -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-4 z-10">
+                                
+                                <div class="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300">
+                                    <h3 class="text-white font-bold text-lg leading-tight mb-1 truncate">Всегда говори «ДА</h3>
+                                    <span class="block text-orange-400 font-medium text-sm mb-4">2008</span>
+                                    
+                                    <div class="flex flex-col gap-2">
+                                        <a href="https://www.google.com/search?q=%D0%B2%D1%81%D0%B5%D0%B3%D0%B4%D0%B0+%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%D0%B8+%D0%B4%D0%B0&amp;newwindow=1&amp;sca_esv=70aa846ced6b4820&amp;biw=1920&amp;bih=1065&amp;sxsrf=ANbL-n5dePJBNBb-RnCRT6L8GVN40oSkjg%3A1780420727721&amp;ei=dxAfao_hK5eD9u8P97HN-QI&amp;gs_ssp=eJzj4tLP1TcwKquszLEwYPSSu7DpYuOFrRc2X9hyYYPChc0X9l3YdGHfxYYLOxRAIgDhIBkF&amp;oq=%D0%B2%D1%81%D0%B5%D0%B3%D0%B4%D0%B0+%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%D0%B8&amp;gs_lp=Egxnd3Mtd2l6LXNlcnAiGdCy0YHQtdCz0LTQsCDQs9C-0LLQvtGA0LgqAggBMg0QIxjwBRiABBiKBRgnMgUQLhiABDIFEAAYgAQyBRAuGIAEMgUQABiABDIFEAAYgAQyChAAGIAEGBQYhwIyBRAAGIAEMgUQABiABDIFEAAYgAQyFBAuGIAEGJcFGNwEGN4EGOAE2AEBSLI5UKYMWJYqcAF4AZABAJgB5QGgAYwSqgEGMC4xMS4yuAEByAEA-AEBmAIOoAK8E6gCD8ICBxAuGOoCGCfCAgcQIxjqAhgnwgIXEAAYgAQYigUYkQIY5wYY6gIYtALYAQHCAhoQLhiABBiKBRiRAhjnBhjIAxjqAhi0AtgBAcICDBAjGIAEGIoFGBMYJ8ICChAjGIAEGIoFGCfCAgsQLhiABBjHARjRA5gDD_EFHvppjY7GAUa6BgYIARABGAGSBwYxLjEwLjOgB7TZAbIHBjAuMTAuM7gHrBPCBwQzLTE0yAeRAYAIAQ&amp;sclient=gws-wiz-serp#sv=CAMSXhoyKhBlLU5Eb2lmOXhTLU93ei1NMg5ORG9pZjl4Uy1Pd3otTToOemdEeXpNdUltS1Z1NE0gBCokCg5tMjdCanp1V0YwUjNNTRIQZS1ORG9pZjl4Uy1Pd3otTRgAMAEYByDK6umYBUoIEAEYASABKAE" target="_blank" class="w-full py-2 bg-white text-black font-bold text-sm rounded-lg hover:bg-gray-200 transition-colors flex justify-center items-center gap-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+                                            Көру
+                                        </a>
+                                        
+                                        <div class="flex gap-2">
+                                            <button onclick="editMovie(1790251776447)" class="flex-1 py-1.5 bg-blue-600/80 hover:bg-blue-500 text-white text-xs font-medium rounded-lg transition-colors backdrop-blur-sm">Өңдеу</button>
+                                            <button onclick="promptDelete(1790251776447)" class="flex-1 py-1.5 bg-red-600/80 hover:bg-red-500 text-white text-xs font-medium rounded-lg transition-colors backdrop-blur-sm">Өшіру</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div><div class="relative overflow-hidden rounded-xl aspect-[2/3] group shadow-lg border border-white/10 bg-gray-900">
+                            <img src="https://www.film.ru/sites/default/files/styles/thumb_260x400/public/movies/posters/14040506-834776.jpg" alt="Сахар" onerror="this.src='https://placehold.co/400x600/222/FFF?text=Image+Not+Found'" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out">
+                            
+                            <!-- Hover Overlay -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-4 z-10">
+                                
+                                <div class="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300">
+                                    <h3 class="text-white font-bold text-lg leading-tight mb-1 truncate">Сахар</h3>
+                                    <span class="block text-orange-400 font-medium text-sm mb-4">2014</span>
+                                    
+                                    <div class="flex flex-col gap-2">
+                                        <a href="https://www.google.com/search?q=%D1%81%D0%B0%D1%85%D0%B0%D1%80+%D1%84%D0%B8%D0%BB%D1%8C%D0%BC&amp;newwindow=1&amp;sca_esv=70aa846ced6b4820&amp;biw=1920&amp;bih=1065&amp;sxsrf=ANbL-n52Ns-1PgGph2zSmEPJuq1cbJ2e2w%3A1780420536803&amp;ei=uA8farLeMMyHxc8P1pbe0Ag&amp;gs_ssp=eJwBKADX_woNL2cvMTFieGR2c2o4aDABShXRgdCw0YXQsNGAINGE0LjQu9GM0Lw2fRNq&amp;oq=%D0%A1%D0%B0%D1%85%D0%B0%D1%80&amp;gs_lp=Egxnd3Mtd2l6LXNlcnAiCtCh0LDRhdCw0YAqAggEMgUQLhiABDIFEAAYgAQyBRAuGIAEMgUQLhiABDIFEC4YgAQyBRAuGIAEMgUQLhiABDIFEC4YgAQyBRAuGIAEMgUQLhiABDIUEC4YgAQYlwUY3AQY3gQY4ATYAQFIq2FQ0hFYoSVwAngBkAEAmAHjAaABlwmqAQUwLjMuM7gBAcgBAPgBAZgCDKACgqcBqAIQwgIHEC4Y6gIYJ8ICBxAjGOoCGCfCAhcQABiABBiKBRiRAhjnBhjqAhi0AtgBAcICFxAuGIAEGIoFGJECGOcGGOoCGLQC2AEBwgIKEC4YgAQYigUYJ8ICBBAjGCfCAhIQIxjwBRjJAhiABBiKBRgTGCfCAhcQLhiABBiKBRiXBRjcBBjeBBjgBNgBAcICChAjGMkCGPAFGCfCAhIQIxjJAhjwBRiABBiKBRgTGCfCAgsQLhiABBjHARjRA8ICBBAAGB7CAgYQABgeGArCAhQQLhiABBiXBRjcBBjeBBjfBNgBAZgDDfEFOe2w0Svgpq-6BgYIARABGAGSBwsyLjIuNC44LTEuM6AHrbwBsgcFMC4yLjS4B-sJwgcFMi0zLjnIB3aACAE&amp;sclient=gws-wiz-serp#sv=CAMSOBoyKhBlLS0zVGZWMUlfNXFxUnRNMg4tM1RmVjFJXzVxcVJ0TToOOG5nczYzamRzTW9YaE0gBDgAGAcg5oKFcToASggQARgBIAEoAQ" target="_blank" class="w-full py-2 bg-white text-black font-bold text-sm rounded-lg hover:bg-gray-200 transition-colors flex justify-center items-center gap-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+                                            Көру
+                                        </a>
+                                        
+                                        <div class="flex gap-2">
+                                            <button onclick="editMovie(1790251691352)" class="flex-1 py-1.5 bg-blue-600/80 hover:bg-blue-500 text-white text-xs font-medium rounded-lg transition-colors backdrop-blur-sm">Өңдеу</button>
+                                            <button onclick="promptDelete(1790251691352)" class="flex-1 py-1.5 bg-red-600/80 hover:bg-red-500 text-white text-xs font-medium rounded-lg transition-colors backdrop-blur-sm">Өшіру</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div><div class="relative overflow-hidden rounded-xl aspect-[2/3] group shadow-lg border border-white/10 bg-gray-900">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGLwMms1rgOBiCIuyXUjseUPS8iJtUvccjydf05eNaD9_UC42wrS30JfwN2a_hJOEkgYKTGjUk_n8crE8Lg6h4VC3QTLpLRyJIgo7ySA&amp;s=10" alt="Интуиция" onerror="this.src='https://placehold.co/400x600/222/FFF?text=Image+Not+Found'" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out">
+                            
+                            <!-- Hover Overlay -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-4 z-10">
+                                
+                                <div class="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300">
+                                    <h3 class="text-white font-bold text-lg leading-tight mb-1 truncate">Интуиция</h3>
+                                    <span class="block text-orange-400 font-medium text-sm mb-4">2001</span>
+                                    
+                                    <div class="flex flex-col gap-2">
+                                        <a href="https://www.google.com/search?gs_ssp=eJzj4tTP1TcwNUkuyzBg9BK4sOPC3otNF5sv7LjYBsT9ALC5Dsc&amp;q=%D0%B8%D0%BD%D1%82%D1%83%D0%B8%D1%86%D0%B8%D1%8F&amp;oq=%D0%B8%D0%BD%D1%82%D1%83%D0%B8%D1%86%D0%B8%D1%8F&amp;gs_lcrp=EgZjaHJvbWUqBwgBEC4YgAQyCggAEAAY4wIYgAQyBwgBEC4YgAQyBwgCEAAYgAQyBwgDEAAYgAQyBwgEEAAYgAQyBwgFEAAYgAQyBwgGEAAYgAQyBwgHEC4YgAQyBwgIEAAYgAQyBwgJEAAYgATSAQg5MzM1ajBqN6gCALACAA&amp;sourceid=chrome&amp;ie=UTF-8" target="_blank" class="w-full py-2 bg-white text-black font-bold text-sm rounded-lg hover:bg-gray-200 transition-colors flex justify-center items-center gap-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+                                            Көру
+                                        </a>
+                                        
+                                        <div class="flex gap-2">
+                                            <button onclick="editMovie(1790251446133)" class="flex-1 py-1.5 bg-blue-600/80 hover:bg-blue-500 text-white text-xs font-medium rounded-lg transition-colors backdrop-blur-sm">Өңдеу</button>
+                                            <button onclick="promptDelete(1790251446133)" class="flex-1 py-1.5 bg-red-600/80 hover:bg-red-500 text-white text-xs font-medium rounded-lg transition-colors backdrop-blur-sm">Өшіру</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div><div class="relative overflow-hidden rounded-xl aspect-[2/3] group shadow-lg border border-white/10 bg-gray-900">
+                            <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSc5eLi2JsjkhJPVnBl-8udd9S5n-Q4XUKyApArh9rfEZYuxFzT" alt="Образцовый самец" onerror="this.src='https://placehold.co/400x600/222/FFF?text=Image+Not+Found'" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out">
+                            
+                            <!-- Hover Overlay -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-4 z-10">
+                                
+                                <div class="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300">
+                                    <h3 class="text-white font-bold text-lg leading-tight mb-1 truncate">Образцовый самец</h3>
+                                    <span class="block text-orange-400 font-medium text-sm mb-4">2001</span>
+                                    
+                                    <div class="flex flex-col gap-2">
+                                        <a href="https://www.google.com/search?gs_ssp=eJzj4tTP1TcwLM6oNDdg9JK_sO_CxosNFzZc2H6xDcjedLH7wk6Fi41AgT0Xtl5sAwDp4hly&amp;q=%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D1%86%D0%BE%D0%B2%D1%8B%D0%B9+%D1%81%D0%B0%D0%BC%D0%B5%D1%86&amp;oq=%D0%BE%D0%B1&amp;gs_lcrp=EgZjaHJvbWUqDAgBEC4YJxiABBiKBTIGCAAQRRg5MgwIARAuGCcYgAQYigUyBwgCEAAYgAQyBwgDEAAYgAQyBwgEEAAYgAQyBggFEEUYPTIGCAYQRRg9MgYIBxBFGD3SAQgzODUyajBqN6gCCLACAfEFsslJtU4bPnA&amp;sourceid=chrome&amp;ie=UTF-8#sv=CAMSOBoyKhBlLTdxbDhCTVJqSTAxMGdNMg43cWw4Qk1SakkwMTBnTToON3FsOEJNUmpJMDEwZ00gBDgAGAcg-4SA7gI6AEoIEAEYASABKAE" target="_blank" class="w-full py-2 bg-white text-black font-bold text-sm rounded-lg hover:bg-gray-200 transition-colors flex justify-center items-center gap-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+                                            Көру
+                                        </a>
+                                        
+                                        <div class="flex gap-2">
+                                            <button onclick="editMovie(1)" class="flex-1 py-1.5 bg-blue-600/80 hover:bg-blue-500 text-white text-xs font-medium rounded-lg transition-colors backdrop-blur-sm">Өңдеу</button>
+                                            <button onclick="promptDelete(1)" class="flex-1 py-1.5 bg-red-600/80 hover:bg-red-500 text-white text-xs font-medium rounded-lg transition-colors backdrop-blur-sm">Өшіру</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div><div class="relative overflow-hidden rounded-xl aspect-[2/3] group shadow-lg border border-white/10 bg-gray-900">
+                            <img src="https://s1.stc.all.kpcdn.net/putevoditel/serialy/wp-content/uploads/2025/10/result_w1500_55512130-467x697.jpg" alt="Лэндмен" onerror="this.src='https://placehold.co/400x600/222/FFF?text=Image+Not+Found'" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out">
+                            
+                            <!-- Hover Overlay -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-4 z-10">
+                                
+                                <div class="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300">
+                                    <h3 class="text-white font-bold text-lg leading-tight mb-1 truncate">Лэндмен</h3>
+                                    <span class="block text-orange-400 font-medium text-sm mb-4">2024</span>
+                                    
+                                    <div class="flex flex-col gap-2">
+                                        <a href="https://www.google.com/search?q=%D0%BB%D1%8D%D0%BD%D0%B4%D0%BC%D0%B5%D0%BD&amp;newwindow=1&amp;sca_esv=2347968312f98d7b&amp;sxsrf=ANbL-n5dP7XAyJr9Ym0xj4tUmveaMAXIsw%3A1777720301658&amp;ei=7dv1abLxJ7SH9u8Pz76NsQI&amp;biw=1920&amp;bih=1065&amp;gs_ssp=eJzj4tVP1zc0LDG0SDKsqKo0YPTiu7D7Yu-FvRe2XNhzYeuFvQC77g87&amp;oq=%D0%9B%D1%8D&amp;gs_lp=Egxnd3Mtd2l6LXNlcnAiBNCb0Y0qAggAMgoQLhiABBiKBRgnMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQLhiABDIFEC4YgAQyBRAAGIAEMhcQLhiABBiKBRiXBRjcBBjeBBjgBNgBAUjmVFDGKljYPXADeAGQAQCYAZICoAHoB6oBAzItNLgBAcgBAPgBAZgCCKACyB2oAhDCAgcQLhjqAhgnwgIHECMY6gIYJ8ICChAjGPAFGOoCGCfCAhcQABiABBiKBRiRAhjnBhjqAhi0AtgBAcICChAjGIAEGIoFGCfCAgQQIxgnwgIKEC4YgAQYigUYQ8ICEBAuGIAEGIoFGEMYxwEY0QPCAgoQABiABBiKBRhDwgIZEC4YgAQYigUYQxiXBRjcBBjeBBjfBNgBAZgDEvEFADkP9WbyU1O6BgYIARABGAGSBwkzLjAuNC44LTGgB9ZNsgcDMi00uAehCMIHBzAuMS4wLjfIB1eACAE&amp;sclient=gws-wiz-serp" target="_blank" class="w-full py-2 bg-white text-black font-bold text-sm rounded-lg hover:bg-gray-200 transition-colors flex justify-center items-center gap-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+                                            Көру
+                                        </a>
+                                        
+                                        <div class="flex gap-2">
+                                            <button onclick="editMovie(2)" class="flex-1 py-1.5 bg-blue-600/80 hover:bg-blue-500 text-white text-xs font-medium rounded-lg transition-colors backdrop-blur-sm">Өңдеу</button>
+                                            <button onclick="promptDelete(2)" class="flex-1 py-1.5 bg-red-600/80 hover:bg-red-500 text-white text-xs font-medium rounded-lg transition-colors backdrop-blur-sm">Өшіру</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div><div class="relative overflow-hidden rounded-xl aspect-[2/3] group shadow-lg border border-white/10 bg-gray-900">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkWCIWAt4MDT0dLT5l3DqaW2lV0KOcEwDgNTzxgyJyueyBdpV6qjV1ptBNTnDLg7TJnI4n&amp;s=10" alt="Обмани меня" onerror="this.src='https://placehold.co/400x600/222/FFF?text=Image+Not+Found'" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out">
+                            
+                            <!-- Hover Overlay -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-4 z-10">
+                                
+                                <div class="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300">
+                                    <h3 class="text-white font-bold text-lg leading-tight mb-1 truncate">Обмани меня</h3>
+                                    <span class="block text-orange-400 font-medium text-sm mb-4">2009</span>
+                                    
+                                    <div class="flex flex-col gap-2">
+                                        <a href="https://www.google.com/search?gs_ssp=eJzj4tLP1Tcwqao0NSs2YPQSvbDvwsYLey5suLD3wg4FIGPrhb0X-wEWRBLz&amp;q=%D0%BE%D0%B1%D0%BC%D0%B0%D0%BD%D0%B8+%D0%BC%D0%B5%D0%BD%D1%8F&amp;oq=%D0%9E%D0%B1%D0%BC%D0%B0&amp;gs_lcrp=EgZjaHJvbWUqDAgBEC4YJxiABBiKBTIGCAAQRRg5MgwIARAuGCcYgAQYigUyBwgCEAAYgAQyBwgDEAAYgAQyBwgEEAAYgAQyBwgFEAAYgAQyBwgGEAAYgAQyBggHEEUYPdIBCDQ4NTZqMGo3qAIAsAIA&amp;sourceid=chrome&amp;ie=UTF-8" target="_blank" class="w-full py-2 bg-white text-black font-bold text-sm rounded-lg hover:bg-gray-200 transition-colors flex justify-center items-center gap-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+                                            Көру
+                                        </a>
+                                        
+                                        <div class="flex gap-2">
+                                            <button onclick="editMovie(3)" class="flex-1 py-1.5 bg-blue-600/80 hover:bg-blue-500 text-white text-xs font-medium rounded-lg transition-colors backdrop-blur-sm">Өңдеу</button>
+                                            <button onclick="promptDelete(3)" class="flex-1 py-1.5 bg-red-600/80 hover:bg-red-500 text-white text-xs font-medium rounded-lg transition-colors backdrop-blur-sm">Өшіру</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div><div class="relative overflow-hidden rounded-xl aspect-[2/3] group shadow-lg border border-white/10 bg-gray-900">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtusiEAM62bwLPDUmm8Iyc5WnV1u3nTvSxQ82KqzSlPwQOexMH98rAYQquHbouvoR4JkDQ76AcUJidENpd81NZnB4zZ9PufXSJ1r8w8vg&amp;s=10" alt="Детство Шелдона" onerror="this.src='https://placehold.co/400x600/222/FFF?text=Image+Not+Found'" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out">
+                            
+                            <!-- Hover Overlay -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-4 z-10">
+                                
+                                <div class="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300">
+                                    <h3 class="text-white font-bold text-lg leading-tight mb-1 truncate">Детство Шелдона</h3>
+                                    <span class="block text-orange-400 font-medium text-sm mb-4">2017</span>
+                                    
+                                    <div class="flex flex-col gap-2">
+                                        <a href="https://www.google.com/search?gs_ssp=eJzj4tVP1zc0TEkrNC3Lzs41YPSSvbDlwtaLTRcbLzZd2HRhn8LFjgtbL-wGCu67sPfCBgDzhBm5&amp;q=%D0%B4%D0%B5%D1%82%D1%81%D1%82%D0%B2%D0%BE+%D1%88%D0%B5%D0%BB%D0%B4%D0%BE%D0%BD%D0%B0&amp;oq=%D0%B4%D0%B5%D1%82%D1%81&amp;gs_lcrp=EgZjaHJvbWUqDAgBEC4YJxiABBiKBTIGCAAQRRg5MgwIARAuGCcYgAQYigUyBggCEEUYOzINCAMQLhjHARjRAxiABDIHCAQQABiABDIHCAUQLhiABDIHCAYQABiABDIHCAcQLhiABDIHCAgQABiABNIBCDMzODlqMGo3qAIAsAIA&amp;sourceid=chrome&amp;ie=UTF-8" target="_blank" class="w-full py-2 bg-white text-black font-bold text-sm rounded-lg hover:bg-gray-200 transition-colors flex justify-center items-center gap-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+                                            Көру
+                                        </a>
+                                        
+                                        <div class="flex gap-2">
+                                            <button onclick="editMovie(4)" class="flex-1 py-1.5 bg-blue-600/80 hover:bg-blue-500 text-white text-xs font-medium rounded-lg transition-colors backdrop-blur-sm">Өңдеу</button>
+                                            <button onclick="promptDelete(4)" class="flex-1 py-1.5 bg-red-600/80 hover:bg-red-500 text-white text-xs font-medium rounded-lg transition-colors backdrop-blur-sm">Өшіру</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div><div class="relative overflow-hidden rounded-xl aspect-[2/3] group shadow-lg border border-white/10 bg-gray-900">
+                            <img src="https://thumbs.dfs.ivi.ru/storage0/contents/f/7/fb126d154d48e1a250305a329ac212.jpg" alt="Зеленая книга" onerror="this.src='https://placehold.co/400x600/222/FFF?text=Image+Not+Found'" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out">
+                            
+                            <!-- Hover Overlay -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-4 z-10">
+                                
+                                <div class="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300">
+                                    <h3 class="text-white font-bold text-lg leading-tight mb-1 truncate">Зеленая книга</h3>
+                                    <span class="block text-orange-400 font-medium text-sm mb-4">2018</span>
+                                    
+                                    <div class="flex flex-col gap-2">
+                                        <a href="https://www.google.com/search?gs_ssp=eJzj4tVP1zc0TDOKLzPKSaoyYPSSvLD9wtYLu4F474UNF_sVLuwCMnZc2HxhAwCS_hcF&amp;q=%D0%B7%D0%B5%D0%BB%D0%B5%D0%BD%D0%B0%D1%8F+%D0%BA%D0%BD%D0%B8%D0%B3%D0%B0&amp;oq=%D0%B7%D0%B5%D0%BB%D0%B5%D0%BD&amp;gs_lcrp=EgZjaHJvbWUqBwgCEC4YgAQyBggAEEUYOTIHCAEQLhiABDIHCAIQLhiABDIHCAMQLhiABDIHCAQQABiABDIHCAUQLhiABDIHCAYQLhiABDIHCAcQLhiABDIHCAgQABiABNIBCDI4NzFqMGo3qAIAsAIA&amp;sourceid=chrome&amp;ie=UTF-8#sv=CAMSOBoyKhBlLUdwVzdFTk53c012RFBNMg5HcFc3RU5Od3NNdkRQTToOMFNQNkp5aEtHT29hcE0gBDgAGAcg0ume2gk6AEoIEAEYASABKAE" target="_blank" class="w-full py-2 bg-white text-black font-bold text-sm rounded-lg hover:bg-gray-200 transition-colors flex justify-center items-center gap-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+                                            Көру
+                                        </a>
+                                        
+                                        <div class="flex gap-2">
+                                            <button onclick="editMovie(5)" class="flex-1 py-1.5 bg-blue-600/80 hover:bg-blue-500 text-white text-xs font-medium rounded-lg transition-colors backdrop-blur-sm">Өңдеу</button>
+                                            <button onclick="promptDelete(5)" class="flex-1 py-1.5 bg-red-600/80 hover:bg-red-500 text-white text-xs font-medium rounded-lg transition-colors backdrop-blur-sm">Өшіру</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div><div class="relative overflow-hidden rounded-xl aspect-[2/3] group shadow-lg border border-white/10 bg-gray-900">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMIEluqxI4xC_pHQuyZba_xDHZfmyGjIk2eA&amp;s" alt="Форрест Гамп" onerror="this.src='https://placehold.co/400x600/222/FFF?text=Image+Not+Found'" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out">
+                            
+                            <!-- Hover Overlay -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-4 z-10">
+                                
+                                <div class="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300">
+                                    <h3 class="text-white font-bold text-lg leading-tight mb-1 truncate">Форрест Гамп</h3>
+                                    <span class="block text-orange-400 font-medium text-sm mb-4">1994</span>
+                                    
+                                    <div class="flex flex-col gap-2">
+                                        <a href="https://www.google.com/search?q=%D1%84%D0%BE%D1%80%D1%80%D0%B5%D1%81%D1%82+%D0%B3%D0%B0%D0%BC%D0%BF&amp;newwindow=1&amp;sca_esv=70aa846ced6b4820&amp;sxsrf=ANbL-n4hNHHu_0oF0yBS4_L9-k1TXFBhuQ%3A1780420209073&amp;ei=cQ4fauqVBLK0i-gPjPTy0Ag&amp;biw=1920&amp;bih=1065&amp;gs_ssp=eJwBJQDa_woIL20vMGJkamQwAUoX0YTQvtGA0YDQtdGB0YIg0LPQsNC80L8esRMh&amp;oq=%D1%84%D0%BE%D1%80%D0%B5%D1%81%D1%82&amp;gs_lp=Egxnd3Mtd2l6LXNlcnAiDNGE0L7RgNC10YHRgioCCAEyBxAjGLECGCcyCRAuGAoYCxiABDIJEAAYgAQYChgLMgUQLhiABDIJEAAYgAQYChgLMgoQLhiABBgUGIcCMgkQABiABBgKGAsyBRAAGIAEMgUQLhiABDIJEAAYgAQYChgLMhgQLhgKGAsYgAQYlwUY3AQY3gQY4ATYAQFIxSpQkRBY9xlwAXgBkAEAmAHnAaAB5wmqAQUwLjIuNLgBA8gBAPgBAZgCCaAC2CSoAg_CAgcQLhjqAhgnwgIHECMY6gIYJ8ICFxAAGIAEGIoFGJECGOcGGOoCGLQC2AEBwgIaEC4YgAQYigUYkQIY5wYYyAMY6gIYtALYAQHCAgoQLhiABBiKBRgnwgILEC4YgAQYxwEY0QPCAhcQLhiABBiKBRiXBRjcBBjeBBjgBNgBAZgDD_EFYs1UYLVz-Ue6BgYIARABGAGSBwkxLjAuNi43LTKgB86CAbIHAzItNrgHvArCBwUyLTIuN8gHWoAIAQ&amp;sclient=gws-wiz-serp" target="_blank" class="w-full py-2 bg-white text-black font-bold text-sm rounded-lg hover:bg-gray-200 transition-colors flex justify-center items-center gap-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+                                            Көру
+                                        </a>
+                                        
+                                        <div class="flex gap-2">
+                                            <button onclick="editMovie(6)" class="flex-1 py-1.5 bg-blue-600/80 hover:bg-blue-500 text-white text-xs font-medium rounded-lg transition-colors backdrop-blur-sm">Өңдеу</button>
+                                            <button onclick="promptDelete(6)" class="flex-1 py-1.5 bg-red-600/80 hover:bg-red-500 text-white text-xs font-medium rounded-lg transition-colors backdrop-blur-sm">Өшіру</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div><div class="relative overflow-hidden rounded-xl aspect-[2/3] group shadow-lg border border-white/10 bg-gray-900">
+                            <img src="https://kinopoisk-ru.clstorage.net/15Wz5M170/4ba426n0Dd2/FMXaod2Meg7DqFQ21vtZUl4-ZQID4z7eSS3dq47wL92Svv3Ci_1RMRf3AxltWsHLqtuew3VFFTYzHSYi4MO3YMGUmiWKH61bxmiHYpW7DkCN6-XSBLSsTs57Gf5ZICPQHjRmDwNxmrmOaNLKvJ8XXbzLjJSjAZex4k26uOQIuvUVQ9PnkFn5hQ052zgcsVrdD3kljpHs_9DRpR9rD_ivExt3bkODdl1zyaJSQXMFEFZ-yoabpMwUJ2JM-DY8Tjo-lcJSb9Obu8TD-Rs3UbRR2AO0qUbSanOZ1iXbakH87x1VviUMAvnVdchgmY85zxbS8sEIFCEOWebnDrY1eUl-MNkO0OGV2XcPBPEf8B3wm95A9q3LleR2XxlhEauFsGqd3jjijM0w0H2H5twNvYLb07RJRdUpBJSvJ4ywtf-ANvBcBNDhldW8zk0xH7te9hJSS71pgRhqMtiZZt2oiLYlHxD0bsHDNxz2Tu_XifhFFds-ygBcrY2Wp6uEPPu3zv3_Voyb5B8UugFFdhs9n_6Z1MfwpMab6H7WF63V6kWyJtpQPWYKQ_XVtEomVk_6D13fPgiCmqVOUSTqAf02-og-8VGK1GecFrTKjjbTsxmxEtfLMWUKlWm0VlGpFimO-mWdFjVkhIGw3P7M7luN8w9XXTPJyBWrj1AgLg1weTXGdXYfDJ4vG9X4Bsu5nHJV81HdSPnnRhFp_1oTr9QjxfSllR7858IFMFQ1iaGRST1BnJa6wADeJMjXoW9CsLW_ijZ2lUTSrxOS_wvPMB_6FHFcmEGwLUyQr3Zb0eEToc905xvd9qtEADTYvkcn08L9iJPZekLKmWKO3edkADxzP0V2-R7Kl2AclPiByzqbtBg3UtkDv22L2el7HR6hGaNJtq2c1feqCIk5GTKJJpMEuwET1DLJSFYtjFWqo4T8ejgOe_cZiZEk196ywwqw1_tQdBtaTTFqChirNVcS41llTXkgHZTwL0uEMBJ7B2ZczbSOEV9-jsxW64EUJ6qKs_T-zXS4HgIZJJVet0vK9t86m_lRWMS0bQTa7_Va3-KWrAS07h3Y9yuJCPRRsczgF8t4BtCXu0gIFqNM2Oijwfw8PcC-sR9LnmFfHLgGDj4eM583WdnBPKIKka77kB8sVaTOcmyUX_ZtAcm3mbgKop9B-Enc0bJAwBwgQVjup4qwt_gJNT0dQVasl9n0ioL4273TNxpaCbzsxdGgPpXXJR5sDPIqkdVxaglJ8FFyRSGUSnyJXtw-AYsaY8jV6OQFsL_8jzUwH8AWrBAVsE1H-5j4kTQamcj4JwWcqjbQ1u4TbM79rp2evy-KQfEauA6lWwV3D9QUeQyE3iJOmagvhHH-f47-OJGE2qmaGXIESnuQdJ_2lZAPdCTL0Go60BGk1WxN9qoeHTUowkL5W_FKqNXH84VfFHTGyNbjAd5gpoI_fjDHPDeUxp_r0xn4RQW30b2d-VYdhPSvgp2o9JjXa59sRD9vlR084oyKuB1zQCqSivIInhZ1iolU6gHUry-BeLQ9wjNwnYvaJZfbskbGuF8ykz4SWYu3qULaoHXdXCXeZMO2qRWatKpETLcTfYeo3cKxjhZcPoPEE2uB0WelSv60OQcxedjFniGR2vfGC7uSvFM3k1CAdWEOVOl33tvq1eiPue4dmvZnyUk31P1B5REJ_IiZ3vZOAxVsR98noMp_PLAAu3sSwpmmGFW0xcnwmXqcOdXXCbgtSRou_RIa7dLqzrbiVFV148xEfp55DiCegn3AWxn1gkGaJwGVqOWJOHm2TvQ5UsJZrZfee85EcBD1V_7aVsv8KAUbIjuV2-uUaQW2KBRWNORGQXzZ9QfpGwT6z1GetQmG2yiA1a6swHs7OUXzddHO2ixR0rxFhfHYetD5ERYGeapO0q63UVGl1eIJt-Bb27GuwIX-mvDEp9uKdcnZXP8NSpLqBBDi6g208ThHffsUw1znG5M_CYU1nzsYMNPSwPPnyptpfteWJ1bkhjXmXJx8bQHJO5qzjemUQ_HFnRN2zMqdoIAUK-NBPj92SvtxHUnRZl2Wu0yHONC93jsTWMe_6IxcY_5ZUe_bLc_-bd4QP6MICjCYeAcgk4p7TFeTskwKl6OIGaLgRH76-QJ7_d0Ln2_R2b9FAnAYdNx30xjHOWjNm26_ElDllG3LfeXe2r-vgAFw07CFrdaPsYeVU_wFRRVvwFbi5kUxfj0AtHsYBFRpElp4h475W_0UfNxaBj8sg1Is99-TbZasiHpoVh-05QXOO5UzjaBcDDiCmZR0jUYVoEYUay1Gf7U3Brd_VY1aoBwWegdBPZZ_l3qaFAX5YUxTo7tRnu5cIkX1aJoTPKfADfmdOoni14E6xxPS9YvMnCiJlyqiRP39soV1MFHImaAQFDJDSvbf-lw40RHBfSICWea0Ul7hX65ONm7Tmz7qRML8WnbFqJ3N9c8V1jLKRhSkxF4hrUx3_vIFvjEeglfglVx6gcS4138RP9xZRHnphZim8lEcIpqtT_hoVNO048NDdhu8xqZczbROm9V0jQvbLchdquSD97xyQLm6X0VZ4JRV_QFE-JK0FngRl8V2YUqVILVYUu5SKQH3LRod-WMKCXSVeYTvnEJ8ABZTtUwCFKAPm2dijnP6cMkytx7F3qWd0vWMij9QNtkwm5aHcazP02E0lVzsU-rNtGARV_ziQ8p-UzCCJRMM-g0fFjcDgNPrRF6irYs-crzLub7fShBuG5s0RUa6XnzYst5dhL_pSlPkvJ3Rbdprz35n0hw0ZQ3NdFt-x-8TgfoCEFz8zEBb4AzWYWIAvTZ8xjf30YaTIBgc_ANF8BF-23uc1M_7oIuVIX0fl2_fJI-_IlLWOqCJTDBZuISt1IJyjNnXNIzEXSUMUavuhrH9-c-6sNiJnulXU7wKz_1XNFc3mZiAM6GF0ilxFVjr3qBIsqTbHj_lxE20W3tP6dVNtQGfXHQEyN-lxZtvoo" alt="Убивать осознанно" onerror="this.src='https://placehold.co/400x600/222/FFF?text=Image+Not+Found'" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out">
+                            
+                            <!-- Hover Overlay -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-4 z-10">
+                                
+                                <div class="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300">
+                                    <h3 class="text-white font-bold text-lg leading-tight mb-1 truncate">Убивать осознанно</h3>
+                                    <span class="block text-orange-400 font-medium text-sm mb-4">2024</span>
+                                    
+                                    <div class="flex flex-col gap-2">
+                                        <a href="https://www.google.com/search?q=%D1%83%D0%B1%D0%B8%D0%B2%D0%B0%D1%82%D1%8C+%D0%BE%D1%81%D0%BE%D0%B7%D0%BD%D0%B0%D0%BD%D0%BD%D0%BE&amp;newwindow=1&amp;sca_esv=2347968312f98d7b&amp;sxsrf=ANbL-n5CdSp2NuL1gAeRzieuyW_e2oi_SA%3A1777720485181&amp;ei=pdz1abrbCrqA9u8Phcb0oQU&amp;biw=1920&amp;bih=1065&amp;ved=0ahUKEwj6wZ3wvJqUAxU6gP0HHQUjPVQQ4dUDCBE&amp;uact=5&amp;oq=%D1%83%D0%B1%D0%B8%D0%B2%D0%B0%D1%82%D1%8C+%D0%BE%D1%81%D0%BE%D0%B7%D0%BD%D0%B0%D0%BD%D0%BD%D0%BE&amp;gs_lp=Egxnd3Mtd2l6LXNlcnAiIdGD0LHQuNCy0LDRgtGMINC-0YHQvtC30L3QsNC90L3QvjIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABjvBTIFEAAY7wUyBRAAGO8FMggQABiABBiiBEjOR1CiNFjAQnABeAGQAQCYAekBoAH4DKoBBTAuMy41uAEDyAEA-AEBmAIHoAKbCsICChAAGEcY1gQYsAPCAg4QABjkAhjWBBiwA9gBAcICFxAuGNwGGLgGGNoGGNgCGMgDGLAD2AEBwgIHEAAYgAQYE8ICCBAAGBYYHhgTwgIKEAAYFhgeGBMYCsICBhAAGBYYHpgDAIgGAZAGDboGBggBEAEYCZIHBTEuMC42oAeTN7IHAzItNrgHjArCBwUyLTYuMcgHL4AIAQ&amp;sclient=gws-wiz-serp" target="_blank" class="w-full py-2 bg-white text-black font-bold text-sm rounded-lg hover:bg-gray-200 transition-colors flex justify-center items-center gap-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+                                            Көру
+                                        </a>
+                                        
+                                        <div class="flex gap-2">
+                                            <button onclick="editMovie(1790245112372)" class="flex-1 py-1.5 bg-blue-600/80 hover:bg-blue-500 text-white text-xs font-medium rounded-lg transition-colors backdrop-blur-sm">Өңдеу</button>
+                                            <button onclick="promptDelete(1790245112372)" class="flex-1 py-1.5 bg-red-600/80 hover:bg-red-500 text-white text-xs font-medium rounded-lg transition-colors backdrop-blur-sm">Өшіру</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div><div class="relative overflow-hidden rounded-xl aspect-[2/3] group shadow-lg border border-white/10 bg-gray-900">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwBa6D3YfOz5qlS3qsDytoptcCBvzV0Nqi2t-aHdK9Ai8AM4dmV3nRnieO&amp;s=10" alt="Социальная дилемма" onerror="this.src='https://placehold.co/400x600/222/FFF?text=Image+Not+Found'" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out">
+                            
+                            <!-- Hover Overlay -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-4 z-10">
+                                
+                                <div class="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300">
+                                    <h3 class="text-white font-bold text-lg leading-tight mb-1 truncate">Социальная дилемма</h3>
+                                    <span class="block text-orange-400 font-medium text-sm mb-4">2020</span>
+                                    
+                                    <div class="flex flex-col gap-2">
+                                        <a href="https://www.google.com/search?q=%D1%81%D0%BE%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F+%D0%B4%D0%B8%D0%BB%D0%B5%D0%BC%D0%BC%D0%B0&amp;newwindow=1&amp;sca_esv=70aa846ced6b4820&amp;biw=1920&amp;bih=1065&amp;sxsrf=ANbL-n52h9mmfbxrAg24p2Ax_7ypMH8o2A%3A1780420367620&amp;ei=Dw8fao7MJfGF9u8P-oaRmQ0&amp;gs_ssp=eJwBNgDJ_woNL2cvMTFqN2c4YmI5ZDABSiPRgdC-0YbQuNCw0LvRjNC90LDRjyDQtNC40LvQtdC80LzQsI7JHeY&amp;oq=%D1%81%D0%BE%D1%86%D0%B8&amp;gs_lp=Egxnd3Mtd2l6LXNlcnAiCNGB0L7RhtC4KgIIAzIFEC4YgAQyBRAAGIAEMgUQABiABDIFEC4YgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyFBAuGIAEGJcFGNwEGN4EGOAE2AEBSNNTUN8YWIIicAJ4AZABAJgB_gGgAckGqgEFMC4xLjO4AQHIAQD4AQGYAgmgAvxwqAIQwgIKEAAYRxjWBBiwA8ICDhAAGOQCGNYEGLAD2AEBwgIXEC4Y3AYYuAYY2gYY2AIYyAMYsAPYAQHCAgcQLhjqAhgnwgIHECMY6gIYJ8ICFxAAGIAEGIoFGJECGOcGGOoCGLQC2AEBwgIgEC4YgAQYigUYkQIY5wYYxwEY0QMYyAMY6gIYtALYAQHCAiAQLhiABBiKBRiRAhjnBhjHARivARjIAxjqAhi0AtgBAcICBBAjGCfCAhIQIxjwBRjJAhiABBiKBRgTGCeYAxHxBfGLw39I3qpoiAYBkAYPugYGCAEQARgJkgcJMi4xLjMuOS0zoAfQQLIHBTAuMS4zuAf8BsIHBTItNC41yAdSgAgB&amp;sclient=gws-wiz-serp#sv=CAMSOBoyKhBlLTZMbjBNMTVDbUduYm9NMg42TG4wTTE1Q21HbmJvTToOYnJiYl9jak5PUzFGcU0gBDgAGAcg36CijQQ6AEoIEAEYASABKAE" target="_blank" class="w-full py-2 bg-white text-black font-bold text-sm rounded-lg hover:bg-gray-200 transition-colors flex justify-center items-center gap-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+                                            Көру
+                                        </a>
+                                        
+                                        <div class="flex gap-2">
+                                            <button onclick="editMovie(1790251615132)" class="flex-1 py-1.5 bg-blue-600/80 hover:bg-blue-500 text-white text-xs font-medium rounded-lg transition-colors backdrop-blur-sm">Өңдеу</button>
+                                            <button onclick="promptDelete(1790251615132)" class="flex-1 py-1.5 bg-red-600/80 hover:bg-red-500 text-white text-xs font-medium rounded-lg transition-colors backdrop-blur-sm">Өшіру</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div><div class="relative overflow-hidden rounded-xl aspect-[2/3] group shadow-lg border border-white/10 bg-gray-900">
+                            <img src="https://kinopoisk-ru.clstorage.net/15Wz5M170/4ba426n0Dd2/FMXaod2Meg7DqFQ21vtZUl4-ZQID4z7eSS3dq47wL92Svv3Ci_1RMRf3AtqsmUAKrIgcQ6ATVSKn26Mi4cNkZoHAGjYPH3mO1DtStwHujMJbqDDH0XEqD05pCbwZO-PXnjShSwQ3WToPppLKqs5X3HyMS1Ulh4bm44c6pz9OMbJXidgsX18zhYVynP9eeJFWiXwtxt4itBCQb5zqwbcg0t087csD8JN9xSYZBTDJXB59hkRS6AQQZuLFtH95zvoy1ghQb50dcktFspOyW3OUWkTw5YVYrv0XEKudpMX3LpwUd6JKjHiVfAft10_6z9iSdgjL1ypJ0eOgi7c6for0fhqK3inf0bmMTbZU_h-5khkG9GjC1qs72FRhXGCJcq4XkrAihUV9nTOBqFXLtwLZ1P5FCt8ghJgjIo03vLfCNPsQit4p0xp4xY22H70ZMB4STTAiT1jvvFhTrV9tjz0s2V48b4tCsRb6iKPRjnDM0V59AINbqYaQryoBefT5CTvxmMHboxIct83Kspl8EbuYngD9Zczao7LWmKUdoIs-6ZmXNKQLgHhU_kEiF4w6hNVev4JFU2pBE-6vwLS5v8o19p6OWCAQEnwGinoX-l4wm5LBPKnCW2kykJxm3mvDfa7fnzYqycVxHniJL9WFOo5XU37Iyl2rQBcqo037dvGBsrgYxBCn016wQwU11rYcc5ERCb7lRlsiPtKapNQgzb2m11a1bE1F-dU9xuURS3RFnNp3AAHS7MeWa-yNN_y9wrIyUIiQr5RZvUeMtl73nn7UGEB078edqz8Q1GNWKk3_KBRc-epIQXVe80Cnmou9StMa9cpGlKrN0GCuAfF8coI9ud7NX6CSXjdDhjIQ-9hwlVpPNCiO26Z535RpVKyPta8cXfimwUy00j1B51zNNMreUn5IiduoRZ2nKsH4ezmPM76dyxtr2BR1ggx-X7ObORYUwTOpT5noM9PWKZKoQDguXVp95cxFv5uzASiVwrvIVR45zIkdpQQQriSOdr36gHy5FkMbKVgR_UJKdp54FnMUnUQ0p43dKD4e1-Zb4Y32LhFdeSdAgfxReIdjkw4zCZ3b_wjJVWjI36dvwb5-90p1uF_EXuMaHrCGgreXfNh7lZjM-6nGnCb03hklUytLdKeWXD-vgcI0WL7F6xmOfAXb0vfAw9ZlSNmjJI01uz7B-bpVDJMr31I8CkRyGTDYOBZQTLVmhpLj8RYQbpvpyzKiHNs4pwGF_JLxRuASCryH1l62i8WV7MXf4KuNPb-4wfS41EyTrBMW-89HMVxy2zjVkQh-psuY67QX22ObK8S2rlcVfSQJhLdYusIvXQE6DR4Zu4QB1GqJnysqTHw8uQr8NpCAliYf1LLCxznQfBm33FaEfWiHWOe00JGlm6jPsi3Un3psCoz2Ef7PoZ-FsIYeFHHICRUlzleiLAL8c_DI8zPSxdRvH17zjQt4GX4WdFHdBPYhypop_BZe75uhBnem1JawIsLNsJP0TebShD1HHBU9iYscJcSYKy9FNn71x7Q6n4AaK90U8E4E9pZw0TAV0kfw4Y2SqLmdEK6TJo-xJlMe-OoEwr6dM8-pmse7z1ZeNMTMnaXBUKHkwzZ6MMW9f9HEHi3cUXCDBzsYsNixHNmFOK0D26q6Gt-lH2qA9i5TXDVnAUJ5HfWCZVGKvUDUlvkDyppjzxCkZEK-8zdPv7XWw5mkUxJzQUww3n_W95tQSHTqTRwgdtvYoh0rj_pnnN-xYgwLM5m6R-raC_WCE5U1QUXRJYWf4ScF-_V5AP311gOSK9jdeMzMuVG0EfgakgxxpkwQ5vEa3uSe4I8wJ5-etugJCXQVs45vXIz6iJTVvoYE3qTFmahuRrl6cgexdtqAE-3UGvMNTXHeMxYzWl-J8-2FnGo1kJClFeyO-GgSG_xuzYs3EHDAr9ID_ABWn7pKTRwgANXuo4lze3CJP7PXBtinlZm_DYk2n_vf8Z6ZA75pzFujs1cSJhNjDP5vVdY_r4FON1M5juAbh_BEGRZ7ykJWpAQc5-8DvTV9D7W6XYtZ4ZAd-g-EeRk91DEUnk-xLwtRIz2Q2qvaKsd17dmV8aZCRTWYs0fn0g15jpnS-wpIVawJleTqQ3i6NY85eh_FUG3fGfOKzLHQP5jxVJ7JMW7MXGJ2kdDkmi5E_e0TFf0uSQV-UDHKotfHskxZnLJFypnkRtXi6wz8fjdAv78QDlauXN4xBkXyWfeT_hZfz3UgBR4qu1JY5lttQ3Bl1h63q4ZOONM5xyhUTrdAnhQ6RspWYgRcKehCN3QxQ7vymQCfoBDcscmBP9t0lbhYXAk47wSRZjVf2yzVoMxwqdqW9W5FjDDaPYWj2UzyytiVPMxD3q2HHabqwH_xsoH09tzDn6wSlPXCSnZev9fzXZiNe6EO1Gk2n9QvWasPduBSlLjqion3lnHP6ZWD-szcUn1Gy1LgThap4kp8sTJK9bmWDd8pWtw3TAR-2_LQ_hUdibAmz5QvNd0X6lqqwXBnGh6xbQsDtlxywSiVwntC3xQ6CwTb7E2d4C3KPjF3TX74UQPfKFNbt8xEOxD1lzPbnIY46cISaDyT2yLe5M41KdRTMaRBATiZMIjoGgo1z1nV-wLLViuLUGYgTngz_sZzudGEmiHUUzoCg_mSOt-52t6B9WyEU-nxndkjHSiNeCKeVrDtggv-0DZCZ1SMOMYcV7SADB1gTpWpJQPw__xNenheSlGnnZLzzgb32Dtd_BHdT7DpBNZh-RBYqpwqR3_h1Z43o4UB9p5ziGfZjDfJVpx7QIQWKMZWZq6AtD_xwzN2kskfpBpatc1MuNo4lL6Ylgv5KMIToHtWWq_TaoY6YR-Q8icERfRYMMqg2gS5AN1UO8SC0yhBnOoojH-6-E50f53E1utVGrxHQf6QtNi71NnD-CaFG6xxmd6uV62LvOjXlbdqBcH2m_uOoRXDNEZWFLPIAFPhi1imKk" alt="Люди, построившие Америку" onerror="this.src='https://placehold.co/400x600/222/FFF?text=Image+Not+Found'" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out">
+                            
+                            <!-- Hover Overlay -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-4 z-10">
+                                
+                                <div class="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300">
+                                    <h3 class="text-white font-bold text-lg leading-tight mb-1 truncate">Люди, построившие Америку</h3>
+                                    <span class="block text-orange-400 font-medium text-sm mb-4">2012</span>
+                                    
+                                    <div class="flex flex-col gap-2">
+                                        <a href="https://www.google.com/search?q=%D0%BB%D1%8E%D0%B4%D0%B8+%D0%BF%D0%BE%D1%81%D1%82%D1%80%D0%BE%D0%B8%D0%B2%D1%88%D0%B8%D0%B5+%D0%B0%D0%BC%D0%B5%D1%80%D0%B8%D0%BA%D1%83&amp;newwindow=1&amp;sca_esv=70aa846ced6b4820&amp;biw=1920&amp;bih=1065&amp;sxsrf=ANbL-n63t-c0711vrtmvNVbK79I-Eldf6A%3A1780420811924&amp;ei=yxAfaumSOMT-7_UPod_N4Ak&amp;gs_ssp=eJwBPgDB_woKL20vMG5iM2hyYzABSi7Qu9GO0LTQuCDQv9C-0YHRgtGA0L7QuNCy0YjQuNC1INCw0LzQtdGA0LjQutGD06EkiA&amp;oq=%D0%BB%D1%8E%D0%B4%D0%B8+%D0%BF%D0%BE%D1%81&amp;gs_lp=Egxnd3Mtd2l6LXNlcnAiD9C70Y7QtNC4INC_0L7RgSoCCAAyBRAuGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgYQABgWGB4yBhAAGBYYHjIGEAAYFhgeMgYQABgWGB4yBhAAGBYYHjIGEAAYFhgeMhQQLhiABBiXBRjcBBjeBBjgBNgBAkjwUVD7CVi6Q3ABeAGQAQCYAeUBoAHwC6oBBTAuNi4yuAEByAEA-AEBmAIMoALVPqgCBsICFxAAGIAEGIoFGJECGOcGGOoCGLQC2AEBwgIdEC4YgAQYigUYkQIY5wYYxwEY0QMY6gIYtALYAQHCAgoQLhiABBiKBRgnwgIXEC4YgAQYigUYlwUY3AQY3gQY4ATYAQLCAgoQLhiABBgUGIcCwgIZEC4YgAQYFBiHAhiXBRjcBBjeBBjgBNgBApgDB_EFT8kZs7hNcmK6BgQIARgHugYGCAIQARgUkgcLMS4zLjUuNy0yLjGgB5K9AbIHBTAuMy41uAfRDMIHBzAuMS41LjbIB1-ACAE&amp;sclient=gws-wiz-serp#sv=CAMSOBoyKhBlLUxfaWd3TzlGZDVzVzVNMg5MX2lnd085RmQ1c1c1TToOb0VldHgyb2ZfemVacU0gBDgAGAcgoNK5uQw6AEoIEAEYASABKAE" target="_blank" class="w-full py-2 bg-white text-black font-bold text-sm rounded-lg hover:bg-gray-200 transition-colors flex justify-center items-center gap-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+                                            Көру
+                                        </a>
+                                        
+                                        <div class="flex gap-2">
+                                            <button onclick="editMovie(1790251827904)" class="flex-1 py-1.5 bg-blue-600/80 hover:bg-blue-500 text-white text-xs font-medium rounded-lg transition-colors backdrop-blur-sm">Өңдеу</button>
+                                            <button onclick="promptDelete(1790251827904)" class="flex-1 py-1.5 bg-red-600/80 hover:bg-red-500 text-white text-xs font-medium rounded-lg transition-colors backdrop-blur-sm">Өшіру</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div><div class="relative overflow-hidden rounded-xl aspect-[2/3] group shadow-lg border border-white/10 bg-gray-900">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgEOmv3LFX6oviPRrBpNkfbkF3hgMSF2rZwNUzYSRBAEQxGprXeMGgkEm9eBRDOl9iXP2Q&amp;s=10" alt="Ford против Ferrari" onerror="this.src='https://placehold.co/400x600/222/FFF?text=Image+Not+Found'" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out">
+                            
+                            <!-- Hover Overlay -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-4 z-10">
+                                
+                                <div class="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300">
+                                    <h3 class="text-white font-bold text-lg leading-tight mb-1 truncate">Ford против Ferrari</h3>
+                                    <span class="block text-orange-400 font-medium text-sm mb-4">2019</span>
+                                    
+                                    <div class="flex flex-col gap-2">
+                                        <a href="https://www.google.com/search?gs_ssp=eJzj4tVP1zc0TDOrNC5IK6o0YPRSudhyYd_FhgtbFC7sB1L7LjZd2HFhkwJQdOvFBqDABiDeAQCkth1_&amp;q=%D1%84%D0%BE%D1%80%D0%B4+%D0%BF%D1%80%D0%BE%D1%82%D0%B8%D0%B2+%D1%84%D0%B5%D1%80%D1%80%D0%B0%D1%80%D0%B8&amp;oq=%D1%84%D0%BE%D1%80%D0%B4+%D0%BF%D1%80%D0%BE%D1%82%D0%B8%D0%B2&amp;gs_lcrp=EgZjaHJvbWUqBwgBEC4YgAQyCggAEAAY4wIYgAQyBwgBEC4YgAQyBggCEEUYOTIHCAMQABiABDIHCAQQABiABDIHCAUQABiABDIHCAYQABiABDIHCAcQABiABDIHCAgQABiABNIBCDc1MzlqMGo5qAIAsAIA&amp;sourceid=chrome&amp;ie=UTF-8#sv=CAMSahoyKhBlLWVzWGY2bUE1dUR0OExNMg5lc1hmNm1BNXVEdDhMTToOZXNYZjZtQTV1RHQ4TE0gBCowChpfb1JPMWFxREZPSkdKeGM4UHhjLUNFQV84MhIQZS1lc1hmNm1BNXVEdDhMTRgAMAEYByD8sfq7D0oIEAEYASABKAE" target="_blank" class="w-full py-2 bg-white text-black font-bold text-sm rounded-lg hover:bg-gray-200 transition-colors flex justify-center items-center gap-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+                                            Көру
+                                        </a>
+                                        
+                                        <div class="flex gap-2">
+                                            <button onclick="editMovie(1790251985074)" class="flex-1 py-1.5 bg-blue-600/80 hover:bg-blue-500 text-white text-xs font-medium rounded-lg transition-colors backdrop-blur-sm">Өңдеу</button>
+                                            <button onclick="promptDelete(1790251985074)" class="flex-1 py-1.5 bg-red-600/80 hover:bg-red-500 text-white text-xs font-medium rounded-lg transition-colors backdrop-blur-sm">Өшіру</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div><div class="relative overflow-hidden rounded-xl aspect-[2/3] group shadow-lg border border-white/10 bg-gray-900">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRL7xHX413qldX5FczMz1-3RBHZGdy7LhczSr5TmOfAFhrmKgqRD9KWWj7EvtKCfTAxjXyx&amp;s=10" alt="Дуэль братьев. История Adidas и Puma" onerror="this.src='https://placehold.co/400x600/222/FFF?text=Image+Not+Found'" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out">
+                            
+                            <!-- Hover Overlay -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-4 z-10">
+                                
+                                <div class="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300">
+                                    <h3 class="text-white font-bold text-lg leading-tight mb-1 truncate">Дуэль братьев. История Adidas и Puma</h3>
+                                    <span class="block text-orange-400 font-medium text-sm mb-4">2016</span>
+                                    
+                                    <div class="flex flex-col gap-2">
+                                        <a href="https://www.google.com/search?q=%D0%B4%D1%83%D1%8D%D0%BB%D1%8C+%D0%B1%D1%80%D0%B0%D1%82%D1%8C%D0%B5%D0%B2&amp;newwindow=1&amp;sca_esv=70aa846ced6b4820&amp;biw=1920&amp;bih=1065&amp;sxsrf=ANbL-n6aLzjjMchS1Mjks6BYbtbBC8ujfg%3A1780421306041&amp;ei=uhIfapScApiL7NYPxqOuiQU&amp;gs_ssp=eJwBLADT_woNL2cvMTFjbWNoMHhuMDABShnQtNGD0Y3Qu9GMINCx0YDQsNGC0YzQtdCyg0kV-w&amp;oq=%D0%B4%D1%83%D1%8D%D0%BB%D1%8C&amp;gs_lp=Egxnd3Mtd2l6LXNlcnAiCtC00YPRjdC70YwqAggCMgoQLhgUGIcCGIAEMgUQABiABDIFEC4YgAQyBRAAGIAEMgUQABiABDIFEC4YgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMhQQLhiABBiXBRjcBBjeBBjgBNgBAUiAM1CUCFi9IHABeAGQAQCYAckBoAHMB6oBBTAuMy4yuAEByAEA-AEBmAIHoAKCGKgCEMICBxAuGOoCGCfCAgcQIxjqAhgnwgIXEAAYgAQYigUYkQIY5wYY6gIYtALYAQHCAh0QLhiABBiKBRiRAhjnBhjHARivARjqAhi0AtgBAcICChAuGIAEGIoFGCfCAgoQIxjwBRjJAhgnwgIXEC4YgAQYigUYlwUY3AQY3gQY4ATYAQHCAgoQLhiABBgUGIcCwgIZEC4YgAQYFBiHAhiXBRjcBBjeBBjgBNgBAcICGRAuGBQYhwIYgAQYlwUY3AQY3gQY4ATYAQGYAxDxBRe6SRiVP5MnugYGCAEQARgBkgcJMS4xLjQuNy0xoAf2dbIHBTAuMS40uAeKCMIHBTItMS42yAdJgAgB&amp;sclient=gws-wiz-serp#sv=CAMSOBoyKhBlLV9zUXlvZmZJMjQzaElNMg5fc1F5b2ZmSTI0M2hJTToOTmdFd1VCVnJWcjVFaE0gBDgAGAcgyK3drwg6AEoIEAEYASABKAE" target="_blank" class="w-full py-2 bg-white text-black font-bold text-sm rounded-lg hover:bg-gray-200 transition-colors flex justify-center items-center gap-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+                                            Көру
+                                        </a>
+                                        
+                                        <div class="flex gap-2">
+                                            <button onclick="editMovie(1790252173736)" class="flex-1 py-1.5 bg-blue-600/80 hover:bg-blue-500 text-white text-xs font-medium rounded-lg transition-colors backdrop-blur-sm">Өңдеу</button>
+                                            <button onclick="promptDelete(1790252173736)" class="flex-1 py-1.5 bg-red-600/80 hover:bg-red-500 text-white text-xs font-medium rounded-lg transition-colors backdrop-blur-sm">Өшіру</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div><div class="relative overflow-hidden rounded-xl aspect-[2/3] group shadow-lg border border-white/10 bg-gray-900">
+                            <img src="https://kinopoisk-ru.clstorage.net/15Wz5M170/4ba426n0Dd2/FMXaod2Meg7DqFQ21vtZUl4-ZQID4z7eSS3dq47wL92Svv3Ci_1RMRf3AxqtWEOKqRuJlyETAbaynKY2tZdiIMGUWjAKCa8ORuiHNlRvzICZvTCT0bZsTs57Gf5ZICPQHjRmDwNxmrmOaNLKvJ8XXbzLjJSjAZex4k26uOQIuvUVQ9PnkFn5hQ052zgcsVrdD3kljpHs_9DRpR9rD_ivExt3bkODdl1zyaJSQXMFEFZ-yoabpMwUJ2JM-DY8Tjo-lcJSb9Obu8TD-Rs3UbRR2AO0qUbSanOZ1iXbakH87x1VviUMAvnVdchgmY85zxbS8sEIFCEOWebnDrY1eUl-MNkO0OGV2XcPBPEf8B3wm95A9q3LleR2XxlhEauFsGqd3jjijM0w0H2H5twNvYLb07RJRdUpBJSvJ4ywtf-ANvBcBNDhldW8zk0xH7te9hJSS71pgRhqMtiZZt2oiLYlHxD0bsHDNxz2Tu_XifhFFds-ygBcrY2Wp6uEPPu3zv3_Voyb5B8UugFFdhs9n_6Z1MfwpMab6H7WF63V6kWyJtpQPWYKQ_XVtEomVk_6D13fPgiCmqVOUSTqAf02-og-8VGK1GecFrTKjjbTsxmxEtfLMWUKlWm0VlGpFimO-mWdFjVkhIGw3P7M7luN8w9XXTPJyBWrj1AgLg1weTXGdXYfDJ4vG9X4Bsu5nHJV81HdSPnnRhFp_1oTr9QjxfSllR7858IFMFQ1iaGRST1BnJa6wADeJMjXoW9CsLW_ijZ2lUTSrxOS_wvPMB_6FHFcmEGwLUyQr3Zb0eEToc905xvd9qtEADTYvkcn08L9iJPZekLKmWKO3edkADxzP0V2-R7Kl2AclPiByzqbtBg3UtkDv22L2el7HR6hGaNJtq2c1feqCIk5GTKJJpMEuwET1DLJSFYtjFWqo4T8ejgOe_cZiZEk196ywwqw1_tQdBtaTTFqChirNVcS41llTXkgHZTwL0uEMBJ7B2ZczbSOEV9-jsxW64EUJ6qKs_T-zXS4HgIZJJVet0vK9t86m_lRWMS0bQTa7_Va3-KWrAS07h3Y9yuJCPRRsczgF8t4BtCXu0gIFqNM2Oijwfw8PcC-sR9LnmFfHLgGDj4eM583WdnBPKIKka77kB8sVaTOcmyUX_ZtAcm3mbgKop9B-Enc0bJAwBwgQVjup4qwt_gJNT0dQVasl9n0ioL4273TNxpaCbzsxdGgPpXXJR5sDPIqkdVxaglJ8FFyRSGUSnyJXtw-AYsaY8jV6OQFsL_8jzUwH8AWrBAVsE1H-5j4kTQamcj4JwWcqjbQ1u4TbM79rp2evy-KQfEauA6lWwV3D9QUeQyE3iJOmagvhHH-f47-OJGE2qmaGXIESnuQdJ_2lZAPdCTL0Go60BGk1WxN9qoeHTUowkL5W_FKqNXH84VfFHTGyNbjAd5gpoI_fjDHPDeUxp_r0xn4RQW30b2d-VYdhPSvgp2o9JjXa59sRD9vlR084oyKuB1zQCqSivIInhZ1iolU6gHUry-BeLQ9wjNwnYvaJZfbskbGuF8ykz4SWYu3qULaoHXdXCXeZMO2qRWatKpETLcTfYeo3cKxjhZcPoPEE2uB0WelSv60OQcxedjFniGR2vfGC7uSvFM3k1CAdWEOVOl33tvq1eiPue4dmvZnyUk31P1B5REJ_IiZ3vZOAxVsR98noMp_PLAAu3sSwpmmGFW0xcnwmXqcOdXXCbgtSRou_RIa7dLqzrbiVFV148xEfp55DiCegn3AWxn1gkGaJwGVqOWJOHm2TvQ5UsJZrZfee85EcBD1V_7aVsv8KAUbIjuV2-uUaQW2KBRWNORGQXzZ9QfpGwT6z1GetQmG2yiA1a6swHs7OUXzddHO2ixR0rxFhfHYetD5ERYGeapO0q63UVGl1eIJt-Bb27GuwIX-mvDEp9uKdcnZXP8NSpLqBBDi6g208ThHffsUw1znG5M_CYU1nzsYMNPSwPPnyptpfteWJ1bkhjXmXJx8bQHJO5qzjemUQ_HFnRN2zMqdoIAUK-NBPj92SvtxHUnRZl2Wu0yHONC93jsTWMe_6IxcY_5ZUe_bLc_-bd4QP6MICjCYeAcgk4p7TFeTskwKl6OIGaLgRH76-QJ7_d0Ln2_R2b9FAnAYdNx30xjHOWjNm26_ElDllG3LfeXe2r-vgAFw07CFrdaPsYeVU_wFRRVvwFbi5kUxfj0AtHsYBFRpElp4h475W_0UfNxaBj8sg1Is99-TbZasiHpoVh-05QXOO5UzjaBcDDiCmZR0jUYVoEYUay1Gf7U3Brd_VY1aoBwWegdBPZZ_l3qaFAX5YUxTo7tRnu5cIkX1aJoTPKfADfmdOoni14E6xxPS9YvMnCiJlyqiRP39soV1MFHImaAQFDJDSvbf-lw40RHBfSICWea0Ul7hX65ONm7Tmz7qRML8WnbFqJ3N9c8V1jLKRhSkxF4hrUx3_vIFvjEeglfglVx6gcS4138RP9xZRHnphZim8lEcIpqtT_hoVNO048NDdhu8xqZczbROm9V0jQvbLchdquSD97xyQLm6X0VZ4JRV_QFE-JK0FngRl8V2YUqVILVYUu5SKQH3LRod-WMKCXSVeYTvnEJ8ABZTtUwCFKAPm2dijnP6cMkytx7F3qWd0vWMij9QNtkwm5aHcazP02E0lVzsU-rNtGARV_ziQ8p-UzCCJRMM-g0fFjcDgNPrRF6irYs-crzLub7fShBuG5s0RUa6XnzYst5dhL_pSlPkvJ3Rbdprz35n0hw0ZQ3NdFt-x-8TgfoCEFz8zEBb4AzWYWIAvTZ8xjf30YaTIBgc_ANF8BF-23uc1M_7oIuVIX0fl2_fJI-_IlLWOqCJTDBZuISt1IJyjNnXNIzEXSUMUavuhrH9-c-6sNiJnulXU7wKz_1XNFc3mZiAM6GF0ilxFVjr3qBIsqTbHj_lxE20W3tP6dVNtQGfXHQEyN-lxZtvoo" alt="Вы нам не подходите" onerror="this.src='https://placehold.co/400x600/222/FFF?text=Image+Not+Found'" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out">
+                            
+                            <!-- Hover Overlay -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-4 z-10">
+                                
+                                <div class="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300">
+                                    <h3 class="text-white font-bold text-lg leading-tight mb-1 truncate">Вы нам не подходите</h3>
+                                    <span class="block text-orange-400 font-medium text-sm mb-4">2026</span>
+                                    
+                                    <div class="flex flex-col gap-2">
+                                        <a href="https://www.google.com/search?q=%D0%B2%D1%8B+%D0%BD%D0%B0%D0%BC+%D0%BD%D0%B5+%D0%BF%D0%BE%D0%B4%D1%85%D0%BE%D0%B4%D0%B8%D1%82%D0%B5&amp;oq=%D0%B2%D1%8B+%D0%BD%D0%B0%D0%BC&amp;gs_lcrp=EgZjaHJvbWUqBwgAEAAYgAQyBwgAEAAYgAQyBggBEEUYOTIHCAIQABiABDIHCAMQABiABDIHCAQQABiABDIHCAUQABiABDIHCAYQABiABDIHCAcQABiABDIHCAgQABiABDIHCAkQABiABNIBCDQ2NzBqMGo3qAIIsAIB8QWpQRcqyzkKvg&amp;sourceid=chrome&amp;source=chrome.ob&amp;ie=UTF-8" target="_blank" class="w-full py-2 bg-white text-black font-bold text-sm rounded-lg hover:bg-gray-200 transition-colors flex justify-center items-center gap-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+                                            Көру
+                                        </a>
+                                        
+                                        <div class="flex gap-2">
+                                            <button onclick="editMovie(1790252257466)" class="flex-1 py-1.5 bg-blue-600/80 hover:bg-blue-500 text-white text-xs font-medium rounded-lg transition-colors backdrop-blur-sm">Өңдеу</button>
+                                            <button onclick="promptDelete(1790252257466)" class="flex-1 py-1.5 bg-red-600/80 hover:bg-red-500 text-white text-xs font-medium rounded-lg transition-colors backdrop-blur-sm">Өшіру</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div><div class="relative overflow-hidden rounded-xl aspect-[2/3] group shadow-lg border border-white/10 bg-gray-900">
+                            <img src="https://kinopoisk-ru.clstorage.net/15Wz5M170/4ba426n0Dd2/FMXaod2Meg7DqFQ21vtZUl4-ZQID4z7eSS3dq47wL92Svv3Ci_1RMRf3AVps2YDJrJxc1yGRwOMmG7QhIkKkZpQW27YPSy2b1DqGttWuGNUb_bJShjEqD05pCbwZO-PXnjShSwQ3WToPppLKqs5X3HyMS1Ulh4bm44c6pz9OMbJXidgsX18zhYVynP9eeJFWiXwtxt4itBCQb5zqwbcg0t087csD8JN9xSYZBTDJXB59hkRS6AQQZuLFtH95zvoy1ghQb50dcktFspOyW3OUWkTw5YVYrv0XEKudpMX3LpwUd6JKjHiVfAft10_6z9iSdgjL1ypJ0eOgi7c6for0fhqK3inf0bmMTbZU_h-5khkG9GjC1qs72FRhXGCJcq4XkrAihUV9nTOBqFXLtwLZ1P5FCt8ghJgjIo03vLfCNPsQit4p0xp4xY22H70ZMB4STTAiT1jvvFhTrV9tjz0s2V48b4tCsRb6iKPRjnDM0V59AINbqYaQryoBefT5CTvxmMHboxIct83Kspl8EbuYngD9Zczao7LWmKUdoIs-6ZmXNKQLgHhU_kEiF4w6hNVev4JFU2pBE-6vwLS5v8o19p6OWCAQEnwGinoX-l4wm5LBPKnCW2kykJxm3mvDfa7fnzYqycVxHniJL9WFOo5XU37Iyl2rQBcqo037dvGBsrgYxBCn016wQwU11rYcc5ERCb7lRlsiPtKapNQgzb2m11a1bE1F-dU9xuURS3RFnNp3AAHS7MeWa-yNN_y9wrIyUIiQr5RZvUeMtl73nn7UGEB078edqz8Q1GNWKk3_KBRc-epIQXVe80Cnmou9StMa9cpGlKrN0GCuAfF8coI9ud7NX6CSXjdDhjIQ-9hwlVpPNCiO26Z535RpVKyPta8cXfimwUy00j1B51zNNMreUn5IiduoRZ2nKsH4ezmPM76dyxtr2BR1ggx-X7ObORYUwTOpT5noM9PWKZKoQDguXVp95cxFv5uzASiVwrvIVR45zIkdpQQQriSOdr36gHy5FkMbKVgR_UJKdp54FnMUnUQ0p43dKD4e1-Zb4Y32LhFdeSdAgfxReIdjkw4zCZ3b_wjJVWjI36dvwb5-90p1uF_EXuMaHrCGgreXfNh7lZjM-6nGnCb03hklUytLdKeWXD-vgcI0WL7F6xmOfAXb0vfAw9ZlSNmjJI01uz7B-bpVDJMr31I8CkRyGTDYOBZQTLVmhpLj8RYQbpvpyzKiHNs4pwGF_JLxRuASCryH1l62i8WV7MXf4KuNPb-4wfS41EyTrBMW-89HMVxy2zjVkQh-psuY67QX22ObK8S2rlcVfSQJhLdYusIvXQE6DR4Zu4QB1GqJnysqTHw8uQr8NpCAliYf1LLCxznQfBm33FaEfWiHWOe00JGlm6jPsi3Un3psCoz2Ef7PoZ-FsIYeFHHICRUlzleiLAL8c_DI8zPSxdRvH17zjQt4GX4WdFHdBPYhypop_BZe75uhBnem1JawIsLNsJP0TebShD1HHBU9iYscJcSYKy9FNn71x7Q6n4AaK90U8E4E9pZw0TAV0kfw4Y2SqLmdEK6TJo-xJlMe-OoEwr6dM8-pmse7z1ZeNMTMnaXBUKHkwzZ6MMW9f9HEHi3cUXCDBzsYsNixHNmFOK0D26q6Gt-lH2qA9i5TXDVnAUJ5HfWCZVGKvUDUlvkDyppjzxCkZEK-8zdPv7XWw5mkUxJzQUww3n_W95tQSHTqTRwgdtvYoh0rj_pnnN-xYgwLM5m6R-raC_WCE5U1QUXRJYWf4ScF-_V5AP311gOSK9jdeMzMuVG0EfgakgxxpkwQ5vEa3uSe4I8wJ5-etugJCXQVs45vXIz6iJTVvoYE3qTFmahuRrl6cgexdtqAE-3UGvMNTXHeMxYzWl-J8-2FnGo1kJClFeyO-GgSG_xuzYs3EHDAr9ID_ABWn7pKTRwgANXuo4lze3CJP7PXBtinlZm_DYk2n_vf8Z6ZA75pzFujs1cSJhNjDP5vVdY_r4FON1M5juAbh_BEGRZ7ykJWpAQc5-8DvTV9D7W6XYtZ4ZAd-g-EeRk91DEUnk-xLwtRIz2Q2qvaKsd17dmV8aZCRTWYs0fn0g15jpnS-wpIVawJleTqQ3i6NY85eh_FUG3fGfOKzLHQP5jxVJ7JMW7MXGJ2kdDkmi5E_e0TFf0uSQV-UDHKotfHskxZnLJFypnkRtXi6wz8fjdAv78QDlauXN4xBkXyWfeT_hZfz3UgBR4qu1JY5lttQ3Bl1h63q4ZOONM5xyhUTrdAnhQ6RspWYgRcKehCN3QxQ7vymQCfoBDcscmBP9t0lbhYXAk47wSRZjVf2yzVoMxwqdqW9W5FjDDaPYWj2UzyytiVPMxD3q2HHabqwH_xsoH09tzDn6wSlPXCSnZev9fzXZiNe6EO1Gk2n9QvWasPduBSlLjqion3lnHP6ZWD-szcUn1Gy1LgThap4kp8sTJK9bmWDd8pWtw3TAR-2_LQ_hUdibAmz5QvNd0X6lqqwXBnGh6xbQsDtlxywSiVwntC3xQ6CwTb7E2d4C3KPjF3TX74UQPfKFNbt8xEOxD1lzPbnIY46cISaDyT2yLe5M41KdRTMaRBATiZMIjoGgo1z1nV-wLLViuLUGYgTngz_sZzudGEmiHUUzoCg_mSOt-52t6B9WyEU-nxndkjHSiNeCKeVrDtggv-0DZCZ1SMOMYcV7SADB1gTpWpJQPw__xNenheSlGnnZLzzgb32Dtd_BHdT7DpBNZh-RBYqpwqR3_h1Z43o4UB9p5ziGfZjDfJVpx7QIQWKMZWZq6AtD_xwzN2kskfpBpatc1MuNo4lL6Ylgv5KMIToHtWWq_TaoY6YR-Q8icERfRYMMqg2gS5AN1UO8SC0yhBnOoojH-6-E50f53E1utVGrxHQf6QtNi71NnD-CaFG6xxmd6uV62LvOjXlbdqBcH2m_uOoRXDNEZWFLPIAFPhi1imKk" alt="Скорпион" onerror="this.src='https://placehold.co/400x600/222/FFF?text=Image+Not+Found'" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out">
+                            
+                            <!-- Hover Overlay -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-4 z-10">
+                                
+                                <div class="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300">
+                                    <h3 class="text-white font-bold text-lg leading-tight mb-1 truncate">Скорпион</h3>
+                                    <span class="block text-orange-400 font-medium text-sm mb-4">2014</span>
+                                    
+                                    <div class="flex flex-col gap-2">
+                                        <a href="https://www.google.com/search?q=%D1%81%D0%BA%D0%BE%D1%80%D0%BF%D0%B8%D0%BE%D0%BD+2014&amp;newwindow=1&amp;sca_esv=6b89c47721840978&amp;biw=1920&amp;bih=1065&amp;sxsrf=APpeQnsJPDnz-8Nqj7yq1M6GlF4lTpe5mg%3A1783951270922&amp;ei=pu9UaoH2N76G9u8P7cOGqQ8&amp;oq=%D1%81%D0%BA%D0%BE%D1%80%D0%BF%D0%B8%D0%BE%D0%BD&amp;gs_lp=Egxnd3Mtd2l6LXNlcnAiENGB0LrQvtGA0L_QuNC-0L0qAggAMgQQIxgnMgUQLhiABDIFEAAYgAQyBRAAGIAEMgUQLhiABDIFEAAYgAQyBRAuGIAEMgUQABiABDIFEAAYgAQyBRAAGIAESObTAVCOWVi4swFwAXgBkAEAmAGQCqABtT6qAQk0LTEuNC4yLjO4AQHIAQD4AQGYAg2gAs5sqAIQwgIKECMY8AUY6gIYJ8ICBxAjGOoCGCfCAhcQABiABBiKBRiRAhjnBhjqAhi0AtgBAcICChAjGPAFGMkCGCfCAgsQLhiABBjHARjRA8ICFBAuGIAEGJcFGNwEGN4EGN8E2AEBwgIKEAAYgAQYFBiHAsICFBAuGIAEGJcFGNwEGN4EGOAE2AEBwgIJEC4YgAQYChgLwgIJEAAYgAQYChgLwgIYEC4YgAQYChgLGJcFGNwEGN4EGOAE2AEBwgIYEC4YgAQYChgLGJcFGNwEGN4EGN8E2AEBmAMK8QWZwksfXrp0vboGBggBEAEYAZIHDTEuNC0zLjMuMS4zLjKgB8nbAbIHCTQtMy4zLjEuMrgHzTXCBwUyLTguNcgHa4AIAQ&amp;sclient=gws-wiz-serp" target="_blank" class="w-full py-2 bg-white text-black font-bold text-sm rounded-lg hover:bg-gray-200 transition-colors flex justify-center items-center gap-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+                                            Көру
+                                        </a>
+                                        
+                                        <div class="flex gap-2">
+                                            <button onclick="editMovie(1790252356489)" class="flex-1 py-1.5 bg-blue-600/80 hover:bg-blue-500 text-white text-xs font-medium rounded-lg transition-colors backdrop-blur-sm">Өңдеу</button>
+                                            <button onclick="promptDelete(1790252356489)" class="flex-1 py-1.5 bg-red-600/80 hover:bg-red-500 text-white text-xs font-medium rounded-lg transition-colors backdrop-blur-sm">Өшіру</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div><div class="relative overflow-hidden rounded-xl aspect-[2/3] group shadow-lg border border-white/10 bg-gray-900">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwBYAc0bi-FYMrwkLeuzIHczbYaX3vgy7Mst9XlO201ZknS0B0AoJBUaCB9Xs76KXShiGurg&amp;s=10" alt="Как я встретил вашу маму" onerror="this.src='https://placehold.co/400x600/222/FFF?text=Image+Not+Found'" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out">
+                            
+                            <!-- Hover Overlay -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-4 z-10">
+                                
+                                <div class="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300">
+                                    <h3 class="text-white font-bold text-lg leading-tight mb-1 truncate">Как я встретил вашу маму</h3>
+                                    <span class="block text-orange-400 font-medium text-sm mb-4">2005</span>
+                                    
+                                    <div class="flex flex-col gap-2">
+                                        <a href="https://www.google.com/search?gs_ssp=eJzj4tTP1Tcwr8rIyjJg9NK5sOvChgu7FC72K1zYdLHxYtPFhgtbLzZd2HFhN1DgwoaLHRebFS7sAarZc7EZAE7JIRU&amp;q=%D0%BA%D0%B0%D0%BA+%D1%8F+%D0%B2%D1%81%D1%82%D1%80%D0%B5%D1%82%D0%B8%D0%BB+%D0%B2%D0%B0%D1%88%D1%83+%D0%BC%D0%B0%D0%BC%D1%83&amp;oq=%D0%BA%D0%B0%D0%BA+&amp;gs_lcrp=EgZjaHJvbWUqBwgBEC4YgAQyBggAEEUYOTIHCAEQLhiABDIGCAIQIxgnMgcIAxAAGIAEMgcIBBAuGIAEMgcIBRAAGIAEMgYIBhBFGD0yBggHEEUYPdIBCDMxODVqMGo5qAIGsAIB8QXJq8KjyjbdeA&amp;sourceid=chrome&amp;source=chrome.ob&amp;ie=UTF-8#sv=CAMSaxoyKhBlLU1kUjdTdDVEeHRCVERNMg5NZFI3U3Q1RHh0QlRETToOTWRSN1N0NUR4dEJURE0gBCoxChtfcmhXMWFwTzdFTXVmM2JvUF9mWGR3QThfOTUSEGUtTWRSN1N0NUR4dEJURE0YADABGAcgl5zUzwRKCBABGAEgASgB" target="_blank" class="w-full py-2 bg-white text-black font-bold text-sm rounded-lg hover:bg-gray-200 transition-colors flex justify-center items-center gap-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+                                            Көру
+                                        </a>
+                                        
+                                        <div class="flex gap-2">
+                                            <button onclick="editMovie(1790252510793)" class="flex-1 py-1.5 bg-blue-600/80 hover:bg-blue-500 text-white text-xs font-medium rounded-lg transition-colors backdrop-blur-sm">Өңдеу</button>
+                                            <button onclick="promptDelete(1790252510793)" class="flex-1 py-1.5 bg-red-600/80 hover:bg-red-500 text-white text-xs font-medium rounded-lg transition-colors backdrop-blur-sm">Өшіру</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div><div class="relative overflow-hidden rounded-xl aspect-[2/3] group shadow-lg border border-white/10 bg-gray-900">
+                            <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTH_JUtb4A8NeKH6bT3fujFJMyadKqJUxlL1BuMAGvPCmwiUcoF" alt="Код 3" onerror="this.src='https://placehold.co/400x600/222/FFF?text=Image+Not+Found'" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out">
+                            
+                            <!-- Hover Overlay -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-4 z-10">
+                                
+                                <div class="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300">
+                                    <h3 class="text-white font-bold text-lg leading-tight mb-1 truncate">Код 3</h3>
+                                    <span class="block text-orange-400 font-medium text-sm mb-4">2025</span>
+                                    
+                                    <div class="flex flex-col gap-2">
+                                        <a href="https://www.google.com/search?gs_ssp=eJzj4tVP1zc0LC4zrSzLLqk0YPTiuLDrwr4LWxSMAXRDChY&amp;q=%D0%BA%D0%BE%D0%B4+3&amp;oq=%D0%BA%D0%BE%D0%B4+&amp;gs_lcrp=EgZjaHJvbWUqBwgEEC4YgAQyBggAEEUYOTIHCAEQLhiABDIHCAIQLhiABDIHCAMQABiABDIHCAQQLhiABDIHCAUQABiABDIHCAYQABiABDIHCAcQABiABDIHCAgQLhiABNIBCDQyNjNqMGo3qAIAsAIA&amp;sourceid=chrome&amp;source=chrome.ob&amp;ie=UTF-8#sv=CAMScxoyKg9ZOWRDT0FQMmFRRktHTToyD1k5ZENPQVAyYVFGS0dNOjoOcTc3bzNnbXIydW1SSU0gBCo5CiQ2RDdGQUI4NC1CQUFCLTRDMjUtOERFNy0wNEJGQTYyREEyRDUSD1k5ZENPQVAyYVFGS0dNOhgBMAEYByDIjr_0AkoIEAEYASABKAE" target="_blank" class="w-full py-2 bg-white text-black font-bold text-sm rounded-lg hover:bg-gray-200 transition-colors flex justify-center items-center gap-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+                                            Көру
+                                        </a>
+                                        
+                                        <div class="flex gap-2">
+                                            <button onclick="editMovie(1790252636784)" class="flex-1 py-1.5 bg-blue-600/80 hover:bg-blue-500 text-white text-xs font-medium rounded-lg transition-colors backdrop-blur-sm">Өңдеу</button>
+                                            <button onclick="promptDelete(1790252636784)" class="flex-1 py-1.5 bg-red-600/80 hover:bg-red-500 text-white text-xs font-medium rounded-lg transition-colors backdrop-blur-sm">Өшіру</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div><div class="relative overflow-hidden rounded-xl aspect-[2/3] group shadow-lg border border-white/10 bg-gray-900">
+                            <img src="https://simg.marwin.kz/media/catalog/product/cache/41deb699a7fea062a8915debbbb0442c/_/-/nrshayyov_mahabbat_yzy_mol_jyldar.jpg" alt="Махаббат, қызық мол жылдар" onerror="this.src='https://placehold.co/400x600/222/FFF?text=Image+Not+Found'" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out">
+                            
+                            <!-- Hover Overlay -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-4 z-10">
+                                
+                                <div class="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300">
+                                    <h3 class="text-white font-bold text-lg leading-tight mb-1 truncate">Махаббат, қызық мол жылдар</h3>
+                                    <span class="block text-orange-400 font-medium text-sm mb-4">2021</span>
+                                    
+                                    <div class="flex flex-col gap-2">
+                                        <a href="https://www.google.com/search?q=%D0%BC%D0%B0%D1%85%D0%B0%D0%B1%D0%B1%D0%B0%D1%82+%D2%9B%D1%8B%D0%B7%D1%8B%D2%9B+%D0%BC%D0%BE%D0%BB+%D0%B6%D1%8B%D0%BB%D0%B4%D0%B0%D1%80+%D0%BA%D0%B8%D0%BD%D0%BE&amp;oq=%D0%BC%D0%B0%D1%85%D0%B0%D0%B1%D0%B1%D0%B0%D1%82+%D2%9B%D1%8B%D0%B7%D1%8B%D2%9B+%D0%BC%D0%BE%D0%BB+%D0%B6%D1%8B%D0%BB%D0%B4%D0%B0%D1%80+%D0%BA%D0%B8%D0%BD%D0%BE&amp;gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIICAEQABgWGB4yCggCEAAYgAQYogQyBwgDEAAY7wUyBwgEEAAY7wUyBwgFEAAY7wUyBwgGEAAY7wXSAQkxNjE4OGowajeoAgCwAgA&amp;sourceid=chrome&amp;source=chrome.ob&amp;ie=UTF-8" target="_blank" class="w-full py-2 bg-white text-black font-bold text-sm rounded-lg hover:bg-gray-200 transition-colors flex justify-center items-center gap-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+                                            Көру
+                                        </a>
+                                        
+                                        <div class="flex gap-2">
+                                            <button onclick="editMovie(1790253038844)" class="flex-1 py-1.5 bg-blue-600/80 hover:bg-blue-500 text-white text-xs font-medium rounded-lg transition-colors backdrop-blur-sm">Өңдеу</button>
+                                            <button onclick="promptDelete(1790253038844)" class="flex-1 py-1.5 bg-red-600/80 hover:bg-red-500 text-white text-xs font-medium rounded-lg transition-colors backdrop-blur-sm">Өшіру</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div><div class="relative overflow-hidden rounded-xl aspect-[2/3] group shadow-lg border border-white/10 bg-gray-900">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHM4uMnwgGKY_Wv9WDQsPhUkjhb-xHVsyrIGeV8vWR2_QL-qW6wLv8lFZ5gYur1lOnaEKcEA&amp;s=10" alt="Искупление" onerror="this.src='https://placehold.co/400x600/222/FFF?text=Image+Not+Found'" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out">
+                            
+                            <!-- Hover Overlay -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-4 z-10">
+                                
+                                <div class="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300">
+                                    <h3 class="text-white font-bold text-lg leading-tight mb-1 truncate">Искупление</h3>
+                                    <span class="block text-orange-400 font-medium text-sm mb-4">2007</span>
+                                    
+                                    <div class="flex flex-col gap-2">
+                                        <a href="https://www.google.com/search?q=%D0%B8%D1%81%D0%BA%D1%83%D0%BF%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5&amp;oq=%D0%B8%D1%81%D0%BA%D1%83%D0%BF&amp;gs_lcrp=EgZjaHJvbWUqCggAEAAY4wIYgAQyCggAEAAY4wIYgAQyBwgBEC4YgAQyBggCEEUYOTIHCAMQABiABDIMCAQQABgUGIcCGIAEMgcIBRAAGIAEMgcIBhAAGIAEMgcIBxAAGIAEMgcICBAAGIAEMgcICRAAGIAE0gEIMjA4M2owajeoAgCwAgA&amp;sourceid=chrome&amp;source=chrome.ob&amp;ie=UTF-8#sv=CAMSaxoyKhBlLTlTWWROaVo1eUs0SHhNMg45U1lkTmlaNXlLNEh4TToOOVNZZE5pWjV5SzRIeE0gBCoxChtfUmhpMWFwWHJOYmE2aGJJUGctVEp1QWtfOTQSEGUtOVNZZE5pWjV5SzRIeE0YADABGAcg4pjHgwhKCBABGAEgASgB" target="_blank" class="w-full py-2 bg-white text-black font-bold text-sm rounded-lg hover:bg-gray-200 transition-colors flex justify-center items-center gap-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+                                            Көру
+                                        </a>
+                                        
+                                        <div class="flex gap-2">
+                                            <button onclick="editMovie(1790253191633)" class="flex-1 py-1.5 bg-blue-600/80 hover:bg-blue-500 text-white text-xs font-medium rounded-lg transition-colors backdrop-blur-sm">Өңдеу</button>
+                                            <button onclick="promptDelete(1790253191633)" class="flex-1 py-1.5 bg-red-600/80 hover:bg-red-500 text-white text-xs font-medium rounded-lg transition-colors backdrop-blur-sm">Өшіру</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div><div class="relative overflow-hidden rounded-xl aspect-[2/3] group shadow-lg border border-white/10 bg-gray-900">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfwY23lk8_SNu5-5UbWCmnMdYgqN19eS_MnHWL2-NvkR5KUnoFO-5QpNKCYBTq7JlYN98C&amp;s=10" alt="Правила съема: Метод Хитча" onerror="this.src='https://placehold.co/400x600/222/FFF?text=Image+Not+Found'" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out">
+                            
+                            <!-- Hover Overlay -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-4 z-10">
+                                
+                                <div class="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300">
+                                    <h3 class="text-white font-bold text-lg leading-tight mb-1 truncate">Правила съема: Метод Хитча</h3>
+                                    <span class="block text-orange-400 font-medium text-sm mb-4">2005</span>
+                                    
+                                    <div class="flex flex-col gap-2">
+                                        <a href="https://www.google.com/search?gs_ssp=eJzj4tTP1TcwNa_MSjdg9NK_sP9iw4UNFzZd2HFh94UNChcbL3Zd2HphD5AJJLZebLqw78IWhYutF3ZcbLrYfmEDANOSJAE&amp;q=%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D0%BB%D0%B0+%D1%81%D1%8A%D0%B5%D0%BC%D0%B0+%D0%BC%D0%B5%D1%82%D0%BE%D0%B4+%D1%85%D0%B8%D1%82%D1%87%D0%B0&amp;oq=%D0%BF%D1%80%D0%B0%D0%B2%D0%B8&amp;gs_lcrp=EgZjaHJvbWUqBwgCEC4YgAQyBggAEEUYOTIHCAEQABiABDIHCAIQLhiABDIHCAMQABiABDIHCAQQLhiABDIHCAUQABiABDIHCAYQABiABDINCAcQLhjHARjRAxiABDIHCAgQABiABDIHCAkQABiABNIBCDU5MTlqMGo3qAIIsAIB8QWIoyxp9l4ME_EFiKMsafZeDBM&amp;sourceid=chrome&amp;source=chrome.ob&amp;ie=UTF-8#sv=CAMSbBoyKhBlLWpPOXZQMWpMbjMwbFpNMg5qTzl2UDFqTG4zMGxaTToOak85dlAxakxuMzBsWk0gBCoyChxfb0JpMWF1THJKNTJia2RVUDVKT0tvQTRfMTAyEhBlLWpPOXZQMWpMbjMwbFpNGAAwARgHIPDGgvwESggQARgBIAEoAQ" target="_blank" class="w-full py-2 bg-white text-black font-bold text-sm rounded-lg hover:bg-gray-200 transition-colors flex justify-center items-center gap-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+                                            Көру
+                                        </a>
+                                        
+                                        <div class="flex gap-2">
+                                            <button onclick="editMovie(1790253260843)" class="flex-1 py-1.5 bg-blue-600/80 hover:bg-blue-500 text-white text-xs font-medium rounded-lg transition-colors backdrop-blur-sm">Өңдеу</button>
+                                            <button onclick="promptDelete(1790253260843)" class="flex-1 py-1.5 bg-red-600/80 hover:bg-red-500 text-white text-xs font-medium rounded-lg transition-colors backdrop-blur-sm">Өшіру</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div><div class="relative overflow-hidden rounded-xl aspect-[2/3] group shadow-lg border border-white/10 bg-gray-900">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhvnZp2bU7aj1NlLYwLKNJlWj0e4KT3oGjgWejSweKdyuBNhMvgku3S5_Wdg-UNfj-R1L9zQ&amp;s=10" alt="Тетрис" onerror="this.src='https://placehold.co/400x600/222/FFF?text=Image+Not+Found'" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out">
+                            
+                            <!-- Hover Overlay -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-4 z-10">
+                                
+                                <div class="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300">
+                                    <h3 class="text-white font-bold text-lg leading-tight mb-1 truncate">Тетрис</h3>
+                                    <span class="block text-orange-400 font-medium text-sm mb-4">2022</span>
+                                    
+                                    <div class="flex flex-col gap-2">
+                                        <a href="https://www.google.com/search?gs_ssp=eJwBKgDV_woNL2cvMTFocDIycW02djABShfRgtC10YLRgNC40YEg0YTQuNC70YzQvFHYFF4&amp;q=%D1%82%D0%B5%D1%82%D1%80%D0%B8%D1%81+%D1%84%D0%B8%D0%BB%D1%8C%D0%BC&amp;rlz=1CDGOYI_enKZ1224KZ1224&amp;oq=t%D1%82%D0%B5%D1%82%D1%80%D0%B8%D1%81&amp;gs_lcrp=EgZjaHJvbWUqCQgCEC4YDRiABDIGCAAQRRg5MgkIARAuGA0YgAQyCQgCEC4YDRiABDIJCAMQABgNGIAEMgkIBBAAGA0YgAQyCQgFEAAYDRiABDIJCAYQABgNGIAEMgkIBxAAGA0YgAQyCQgIEAAYDRiABNIBCDczMzZqMGo3qAIUsAIB4gMEGAIgX_EFFMEmS-lqMxQ&amp;hl=en-US&amp;sourceid=chrome-mobile&amp;source=chrome.ob&amp;ie=UTF-8#sv=CAMSaxoyKhBlLWszWE1nMmR5NWYzY2VNMg5rM1hNZzJkeTVmM2NlTToOazNYTWcyZHk1ZjNjZU0gBCoxChtfS0JtMWFwVDZDNUtnaGJJUG5ZYXNrQU1fOTISEGUtazNYTWcyZHk1ZjNjZU0YADABGAcg9ZSM_glKCBABGAEgASgB" target="_blank" class="w-full py-2 bg-white text-black font-bold text-sm rounded-lg hover:bg-gray-200 transition-colors flex justify-center items-center gap-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+                                            Көру
+                                        </a>
+                                        
+                                        <div class="flex gap-2">
+                                            <button onclick="editMovie(1790253388042)" class="flex-1 py-1.5 bg-blue-600/80 hover:bg-blue-500 text-white text-xs font-medium rounded-lg transition-colors backdrop-blur-sm">Өңдеу</button>
+                                            <button onclick="promptDelete(1790253388042)" class="flex-1 py-1.5 bg-red-600/80 hover:bg-red-500 text-white text-xs font-medium rounded-lg transition-colors backdrop-blur-sm">Өшіру</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div><div class="relative overflow-hidden rounded-xl aspect-[2/3] group shadow-lg border border-white/10 bg-gray-900">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSi5IJjvUk7we0EHV-bQjBn3P5P3qQiJryRtBoHgQPZVA&amp;s=10" alt="Мэйдэй" onerror="this.src='https://placehold.co/400x600/222/FFF?text=Image+Not+Found'" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out">
+                            
+                            <!-- Hover Overlay -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-4 z-10">
+                                
+                                <div class="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300">
+                                    <h3 class="text-white font-bold text-lg leading-tight mb-1 truncate">Мэйдэй</h3>
+                                    <span class="block text-orange-400 font-medium text-sm mb-4">2026</span>
+                                    
+                                    <div class="flex flex-col gap-2">
+                                        <a href="https://www.google.com/search?q=%D0%BC%D1%8D%D0%B9%D0%B4%D1%8D%D0%B9&amp;oq=%D0%BC%D1%8D%D0%B9%D0%B4%D1%8D%D0%B9&amp;gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIHCAEQLhiABDIHCAIQABiABDIHCAMQABiABDIGCAQQABgeMgYIBRAAGB4yBggGEAAYHjIGCAcQABgeMgYICBAAGB4yBggJEAAYHtIBCDY0ODBqMGo3qAIAsAIA&amp;sourceid=chrome&amp;source=chrome.ob&amp;ie=UTF-8" target="_blank" class="w-full py-2 bg-white text-black font-bold text-sm rounded-lg hover:bg-gray-200 transition-colors flex justify-center items-center gap-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+                                            Көру
+                                        </a>
+                                        
+                                        <div class="flex gap-2">
+                                            <button onclick="editMovie(1790253505386)" class="flex-1 py-1.5 bg-blue-600/80 hover:bg-blue-500 text-white text-xs font-medium rounded-lg transition-colors backdrop-blur-sm">Өңдеу</button>
+                                            <button onclick="promptDelete(1790253505386)" class="flex-1 py-1.5 bg-red-600/80 hover:bg-red-500 text-white text-xs font-medium rounded-lg transition-colors backdrop-blur-sm">Өшіру</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div><div class="relative overflow-hidden rounded-xl aspect-[2/3] group shadow-lg border border-white/10 bg-gray-900">
+                            <img src="https://kinopoisk-ru.clstorage.net/15Wz5M170/4ba426n0Dd2/FMXaod2Meg7DqFQ21vtZUl4-ZQID4z7eSS3dq47wL92Svv3Ci_1RMRf3ARkvWoPJrJxdQ-ATACMnW6DjtUMkZpTBjvYZyu2OlDpSNgBujBQYaPGRETEqD05pCbwZO-PXnjShSwQ3WToPppLKqs5X3HyMS1Ulh4bm44c6pz9OMbJXidgsX18zhYVynP9eeJFWiXwtxt4itBCQb5zqwbcg0t087csD8JN9xSYZBTDJXB59hkRS6AQQZuLFtH95zvoy1ghQb50dcktFspOyW3OUWkTw5YVYrv0XEKudpMX3LpwUd6JKjHiVfAft10_6z9iSdgjL1ypJ0eOgi7c6for0fhqK3inf0bmMTbZU_h-5khkG9GjC1qs72FRhXGCJcq4XkrAihUV9nTOBqFXLtwLZ1P5FCt8ghJgjIo03vLfCNPsQit4p0xp4xY22H70ZMB4STTAiT1jvvFhTrV9tjz0s2V48b4tCsRb6iKPRjnDM0V59AINbqYaQryoBefT5CTvxmMHboxIct83Kspl8EbuYngD9Zczao7LWmKUdoIs-6ZmXNKQLgHhU_kEiF4w6hNVev4JFU2pBE-6vwLS5v8o19p6OWCAQEnwGinoX-l4wm5LBPKnCW2kykJxm3mvDfa7fnzYqycVxHniJL9WFOo5XU37Iyl2rQBcqo037dvGBsrgYxBCn016wQwU11rYcc5ERCb7lRlsiPtKapNQgzb2m11a1bE1F-dU9xuURS3RFnNp3AAHS7MeWa-yNN_y9wrIyUIiQr5RZvUeMtl73nn7UGEB078edqz8Q1GNWKk3_KBRc-epIQXVe80Cnmou9StMa9cpGlKrN0GCuAfF8coI9ud7NX6CSXjdDhjIQ-9hwlVpPNCiO26Z535RpVKyPta8cXfimwUy00j1B51zNNMreUn5IiduoRZ2nKsH4ezmPM76dyxtr2BR1ggx-X7ObORYUwTOpT5noM9PWKZKoQDguXVp95cxFv5uzASiVwrvIVR45zIkdpQQQriSOdr36gHy5FkMbKVgR_UJKdp54FnMUnUQ0p43dKD4e1-Zb4Y32LhFdeSdAgfxReIdjkw4zCZ3b_wjJVWjI36dvwb5-90p1uF_EXuMaHrCGgreXfNh7lZjM-6nGnCb03hklUytLdKeWXD-vgcI0WL7F6xmOfAXb0vfAw9ZlSNmjJI01uz7B-bpVDJMr31I8CkRyGTDYOBZQTLVmhpLj8RYQbpvpyzKiHNs4pwGF_JLxRuASCryH1l62i8WV7MXf4KuNPb-4wfS41EyTrBMW-89HMVxy2zjVkQh-psuY67QX22ObK8S2rlcVfSQJhLdYusIvXQE6DR4Zu4QB1GqJnysqTHw8uQr8NpCAliYf1LLCxznQfBm33FaEfWiHWOe00JGlm6jPsi3Un3psCoz2Ef7PoZ-FsIYeFHHICRUlzleiLAL8c_DI8zPSxdRvH17zjQt4GX4WdFHdBPYhypop_BZe75uhBnem1JawIsLNsJP0TebShD1HHBU9iYscJcSYKy9FNn71x7Q6n4AaK90U8E4E9pZw0TAV0kfw4Y2SqLmdEK6TJo-xJlMe-OoEwr6dM8-pmse7z1ZeNMTMnaXBUKHkwzZ6MMW9f9HEHi3cUXCDBzsYsNixHNmFOK0D26q6Gt-lH2qA9i5TXDVnAUJ5HfWCZVGKvUDUlvkDyppjzxCkZEK-8zdPv7XWw5mkUxJzQUww3n_W95tQSHTqTRwgdtvYoh0rj_pnnN-xYgwLM5m6R-raC_WCE5U1QUXRJYWf4ScF-_V5AP311gOSK9jdeMzMuVG0EfgakgxxpkwQ5vEa3uSe4I8wJ5-etugJCXQVs45vXIz6iJTVvoYE3qTFmahuRrl6cgexdtqAE-3UGvMNTXHeMxYzWl-J8-2FnGo1kJClFeyO-GgSG_xuzYs3EHDAr9ID_ABWn7pKTRwgANXuo4lze3CJP7PXBtinlZm_DYk2n_vf8Z6ZA75pzFujs1cSJhNjDP5vVdY_r4FON1M5juAbh_BEGRZ7ykJWpAQc5-8DvTV9D7W6XYtZ4ZAd-g-EeRk91DEUnk-xLwtRIz2Q2qvaKsd17dmV8aZCRTWYs0fn0g15jpnS-wpIVawJleTqQ3i6NY85eh_FUG3fGfOKzLHQP5jxVJ7JMW7MXGJ2kdDkmi5E_e0TFf0uSQV-UDHKotfHskxZnLJFypnkRtXi6wz8fjdAv78QDlauXN4xBkXyWfeT_hZfz3UgBR4qu1JY5lttQ3Bl1h63q4ZOONM5xyhUTrdAnhQ6RspWYgRcKehCN3QxQ7vymQCfoBDcscmBP9t0lbhYXAk47wSRZjVf2yzVoMxwqdqW9W5FjDDaPYWj2UzyytiVPMxD3q2HHabqwH_xsoH09tzDn6wSlPXCSnZev9fzXZiNe6EO1Gk2n9QvWasPduBSlLjqion3lnHP6ZWD-szcUn1Gy1LgThap4kp8sTJK9bmWDd8pWtw3TAR-2_LQ_hUdibAmz5QvNd0X6lqqwXBnGh6xbQsDtlxywSiVwntC3xQ6CwTb7E2d4C3KPjF3TX74UQPfKFNbt8xEOxD1lzPbnIY46cISaDyT2yLe5M41KdRTMaRBATiZMIjoGgo1z1nV-wLLViuLUGYgTngz_sZzudGEmiHUUzoCg_mSOt-52t6B9WyEU-nxndkjHSiNeCKeVrDtggv-0DZCZ1SMOMYcV7SADB1gTpWpJQPw__xNenheSlGnnZLzzgb32Dtd_BHdT7DpBNZh-RBYqpwqR3_h1Z43o4UB9p5ziGfZjDfJVpx7QIQWKMZWZq6AtD_xwzN2kskfpBpatc1MuNo4lL6Ylgv5KMIToHtWWq_TaoY6YR-Q8icERfRYMMqg2gS5AN1UO8SC0yhBnOoojH-6-E50f53E1utVGrxHQf6QtNi71NnD-CaFG6xxmd6uV62LvOjXlbdqBcH2m_uOoRXDNEZWFLPIAFPhi1imKk" alt="ЕСТ ТЕБЯ ЗАЖИВО" onerror="this.src='https://placehold.co/400x600/222/FFF?text=Image+Not+Found'" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out">
+                            
+                            <!-- Hover Overlay -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-4 z-10">
+                                
+                                <div class="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300">
+                                    <h3 class="text-white font-bold text-lg leading-tight mb-1 truncate">ЕСТ ТЕБЯ ЗАЖИВО</h3>
+                                    <span class="block text-orange-400 font-medium text-sm mb-4">2016</span>
+                                    
+                                    <div class="flex flex-col gap-2">
+                                        <a href="https://www.google.com/search?q=%D0%B5%D1%81%D1%82+%D1%82%D0%B5%D0%B1%D1%8F+%D0%B7%D0%B0%D0%B6%D0%B8%D0%B2%D0%BE+2016&amp;newwindow=1&amp;sca_esv=4c5de4241442eb86&amp;sxsrf=APpeQnvTIXAscEGN1d20QzxNKKaG59W1Nw%3A1790256878824&amp;ei=7ia1atzTMarjxc8Ph5vd8A4&amp;biw=1920&amp;bih=1065&amp;oq=%D0%B5%D1%81%D1%82++2016&amp;gs_lp=Egxnd3Mtd2l6LXNlcnAiDNC10YHRgiAgMjAxNioGCAAYBxgeMgYQABgHGB4yBhAAGAcYHjIGEAAYBRgeMgYQABgHGB4yBRAAGO8FMgUQABjvBTIFEAAY7wUyBRAAGO8FMgUQABjvBUjPX1DGB1iHTHABeAGQAQCYAe4BoAGgEqoBBTAuOC40sAEAuAEByAEA-AEBmAIJoAL2DMICChAAGEcY1gQYsAPCAhcQLhjcBhi4BhjaBhjYAhjIAxiwA9gBAcICBBAjGCfCAgYQABgWGB7CAgoQABiABBiKBRhDwgIIEAAYBxgeGBPCAggQABgFGAcYHpgDAOIDBBgAIF3iAwQYACBe4gMEGAAgX-IDBBgAIGDiAwQYACBh4gMEGAAgYogGAZAGC7oGBAgBGBmSBwUxLjQuNKAHwj6yBwUwLjQuNLgH6wzCBwcwLjEuNS4zyAc_gAgB&amp;sclient=gws-wiz-serp" target="_blank" class="w-full py-2 bg-white text-black font-bold text-sm rounded-lg hover:bg-gray-200 transition-colors flex justify-center items-center gap-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+                                            Көру
+                                        </a>
+                                        
+                                        <div class="flex gap-2">
+                                            <button onclick="editMovie(1790256997283)" class="flex-1 py-1.5 bg-blue-600/80 hover:bg-blue-500 text-white text-xs font-medium rounded-lg transition-colors backdrop-blur-sm">Өңдеу</button>
+                                            <button onclick="promptDelete(1790256997283)" class="flex-1 py-1.5 bg-red-600/80 hover:bg-red-500 text-white text-xs font-medium rounded-lg transition-colors backdrop-blur-sm">Өшіру</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div><div class="relative overflow-hidden rounded-xl aspect-[2/3] group shadow-lg border border-white/10 bg-gray-900">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPgmAmFd6xQcaemN1NuaQBOdO_IZUqVA3ixrZ5W2bftWzezPMSZNC1s0Ql2JrNk0L038CLAw&amp;s=10" alt="Корпорация «Еда»" onerror="this.src='https://placehold.co/400x600/222/FFF?text=Image+Not+Found'" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out">
+                            
+                            <!-- Hover Overlay -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-4 z-10">
+                                
+                                <div class="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300">
+                                    <h3 class="text-white font-bold text-lg leading-tight mb-1 truncate">Корпорация «Еда»</h3>
+                                    <span class="block text-orange-400 font-medium text-sm mb-4">2008</span>
+                                    
+                                    <div class="flex flex-col gap-2">
+                                        <a href="https://www.google.com/search?q=%D0%BA%D0%BE%D1%80%D0%BF%D0%BE%D1%80%D0%B0%D1%86%D0%B8%D1%8F+%D0%B5%D0%B4%D0%B0+2008&amp;newwindow=1&amp;sca_esv=4c5de4241442eb86&amp;biw=1920&amp;bih=1065&amp;sxsrf=APpeQnsOEMCYA6TdJq3Az_CqY667Sesfxw%3A1790257497758&amp;ei=WSm1avHfLdOHhbIPn4i1wA4&amp;oq=%D0%BA%D0%BE%D1%80%D0%BF%D0%B0%D1%80%D0%B0%D1%86%D0%B8%D1%8F+%D0%B5%D0%B4%D0%B0&amp;gs_lp=Egxnd3Mtd2l6LXNlcnAiG9C60L7RgNC_0LDRgNCw0YbQuNGPINC10LTQsCoGCAQYFhgeMgcQABiABBgNMgcQABiABBgNMgYQABgWGB4yBhAAGBYYHjIGEAAYFhgeMgYQABgWGB4yBhAAGBYYHjIGEAAYFhgeMgYQABgWGB4yBhAAGBYYHkjfiQFQig1Y_1twAXgAkAEAmAHoAaAB2hSqAQYwLjExLjOwAQC4AQHIAQD4AQGYAg-gAr4WqAIQwgIHECMY6gIYJ8ICBxAuGOoCGCfCAg0QIxjwBRjJAhjqAhgnwgIXEAAYgAQYigUYkQIY5wYY6gIYtALYAQHCAhoQABiABBiKBRiRAhjnBhi0BxjqAhi0AtgBAcICBBAuGCfCAgQQIxgnwgIFEAAYgATCAgUQLhiABMICERAuGJcFGNwEGN4EGOAE2AEBwgIHECMY8AUYJ8ICChAAGIAEGBQYhwLCAgoQLhiABBgUGIcCwgIHEC4YgAQYCsICCRAuGIAEGAoYC8ICBxAAGIAEGArCAhYQLhiABBgKGJcFGNwEGN4EGOAE2AEBwgIJEC4YChgLGIAEwgIJEAAYgAQYChgLwgIYEC4YChgLGIAEGJcFGNwEGN4EGOAE2AEBwgIYEC4YgAQYChgLGJcFGNwEGN4EGOAE2AEBwgIGEAAYHhgNwgIJEC4YgAQYExgKwgIFEAAY7wXCAggQABiABBiiBMICGBAuGIAEGBMYChiXBRjcBBjeBBjgBNgBAZgDE-IDBBgAIF3iAwQYACBe4gMEGAAgX-IDBBgAIGDiAwQYACBh4gMEGAAgYvEFp53kqlDPtDe6BgYIARABGAGSBwUxLjYuOKAH-N8BsgcFMC42Lji4B6oWwgcGMi0xLjE0yAerAYAIAQ&amp;sclient=gws-wiz-serp#sv=CAMSbBoyKhBlLTJDTHRRRlcxM19pLUxNMg4yQ0x0UUZXMTNfaS1MTToOMkNMdFFGVzEzX2ktTE0gBCoyChxfMUNtMWFzeXhLYktveGM4UGpfU0tpUWNfMTAwEhBlLTJDTHRRRlcxM19pLUxNGAAwARgHIMyixY0GSggQARgBIAEoAQ" target="_blank" class="w-full py-2 bg-white text-black font-bold text-sm rounded-lg hover:bg-gray-200 transition-colors flex justify-center items-center gap-1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+                                            Көру
+                                        </a>
+                                        
+                                        <div class="flex gap-2">
+                                            <button onclick="editMovie(1790257666307)" class="flex-1 py-1.5 bg-blue-600/80 hover:bg-blue-500 text-white text-xs font-medium rounded-lg transition-colors backdrop-blur-sm">Өңдеу</button>
+                                            <button onclick="promptDelete(1790257666307)" class="flex-1 py-1.5 bg-red-600/80 hover:bg-red-500 text-white text-xs font-medium rounded-lg transition-colors backdrop-blur-sm">Өшіру</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div></div>
     </main>
 
     <!-- Add/Edit Movie Modal -->
